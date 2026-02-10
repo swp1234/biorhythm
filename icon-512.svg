@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="80" fill="#0a0a1a"/>
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#6c5ce7" stroke-width="4" opacity="0.3"/>
+  <path d="M66 256 C126 106, 186 406, 256 256 C326 106, 386 406, 446 256" fill="none" stroke="#e74c3c" stroke-width="8" stroke-linecap="round"/>
+  <path d="M66 256 C136 76, 206 436, 256 256 C306 76, 376 436, 446 256" fill="none" stroke="#3498db" stroke-width="8" stroke-linecap="round"/>
+  <path d="M66 256 C146 56, 226 456, 286 256 C346 56, 406 456, 446 256" fill="none" stroke="#f39c12" stroke-width="8" stroke-linecap="round"/>
+  <text x="256" y="450" text-anchor="middle" font-family="Arial" font-size="50" fill="white" opacity="0.8">🌊</text>
+</svg>
