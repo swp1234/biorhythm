@@ -50,6 +50,12 @@
   --accent:#6c5ce7;--accent2:#a29bfe;
   --glow-physical:rgba(231,76,60,0.4);--glow-emotional:rgba(52,152,219,0.4);--glow-intellectual:rgba(243,156,18,0.4);
 }
+[data-theme="light"]{
+  --bg:#f5f5fa;--bg2:#ffffff;--bg3:#f0f0f5;
+  --surface:rgba(255,255,255,0.9);--surface-border:rgba(108,92,231,0.15);
+  --text:#1a1a2e;--text2:#5a5a70;--text3:#8a8a9a;
+}
+[data-theme="light"] body{background:var(--bg);color:var(--text)}
 html{font-size:16px;scroll-behavior:smooth}
 body{
   font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);
@@ -288,6 +294,9 @@ body{
 <div class="stars-container" id="stars"></div>
 
 <div class="app-shell">
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☀️</button>
+  
   <!-- Top Bar -->
   <div class="top-bar">
     <a href="https://dopabrain.com/portal/" class="home-link">
@@ -895,6 +904,21 @@ document.querySelectorAll('.lang-option').forEach(btn=>{
 
 window.addEventListener('resize', resizeCanvas);
 
+/* ─── Theme ─── */
+const themeToggle = document.getElementById('theme-toggle');
+if(themeToggle){
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeToggle.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+  themeToggle.addEventListener('click',()=>{
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    themeToggle.textContent = next === 'light' ? '🌙' : '☀️';
+  });
+}
+
 /* ─── Init ─── */
 function init(){
   createStars();
@@ -919,8 +943,15 @@ function init(){
   }
 }
 
-if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
-else init();
+function safeInit(){
+  try { init(); } catch(e) {
+    console.error('Init error:', e);
+    const loader = document.getElementById('app-loader');
+    if(loader){ loader.classList.add('hidden'); setTimeout(()=>loader.remove(),300); }
+  }
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',safeInit);
+else safeInit();
 
 })();
 </script>
