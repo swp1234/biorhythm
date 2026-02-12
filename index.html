@@ -934,6 +934,10 @@ function init(){
     const savedPartner = localStorage.getItem('bio-partner');
     if(savedPartner) document.getElementById('partnerDate').value = savedPartner;
     calculate();
+  } else {
+    // First visit: show sample result immediately with a demo date
+    document.getElementById('birthDate').value = '1995-06-15';
+    calculate();
   }
 
   const loader = document.getElementById('app-loader');
