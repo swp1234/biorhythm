@@ -259,6 +259,17 @@ body{
   cursor:pointer;transition:all .2s;backdrop-filter:blur(10px);
 }
 .btn-share:hover{border-color:var(--accent);background:rgba(108,92,231,0.1)}
+.share-buttons{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.share-btn{
+  min-height:44px;padding:10px 20px;border:none;border-radius:12px;
+  font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;
+  display:inline-flex;align-items:center;gap:6px;font-family:inherit;
+}
+.share-btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.share-twitter{background:#000;color:#fff}
+.share-url{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15)}
+[data-theme="light"] .share-url{background:rgba(0,0,0,0.05);color:#333;border-color:rgba(0,0,0,0.1)}
+.share-btn:hover{transform:translateY(-1px)}
 
 /* Ad Banner */
 .ad-slot{
@@ -382,6 +393,14 @@ body{
   <!-- Share -->
   <div class="share-section" id="shareSection">
     <button class="btn-share" id="btnShare">📤 <span data-i18n="share">결과 공유</span></button>
+    <div class="share-buttons" id="share-section" style="display:none">
+        <button class="share-btn share-twitter" id="shareTwitterBtn" aria-label="Share on Twitter">
+            <span>𝕏</span> Twitter
+        </button>
+        <button class="share-btn share-url" id="shareUrlBtn" aria-label="Copy URL">
+            📋 Copy URL
+        </button>
+    </div>
   </div>
 
   <!-- Ad Bottom -->
@@ -714,6 +733,7 @@ function calculate(){
   document.getElementById('readingSection').classList.add('visible');
   document.getElementById('criticalSection').classList.add('visible');
   document.getElementById('shareSection').classList.add('visible');
+  showShareButtons();
 
   resizeCanvas();
   animateGraph();
@@ -860,12 +880,32 @@ canvas.addEventListener('mouseleave', ()=>{
 });
 
 /* ─── Share ─── */
+function showShareButtons() {
+  const shareSection = document.getElementById('share-section');
+  if (shareSection) shareSection.style.display = 'flex';
+}
+
 document.getElementById('btnShare').addEventListener('click',()=>{
   if(!graphData) return;
   const vals = CYCLES.map((c,i)=>t(c.name)+': '+(graphData.values[i][15]>=0?'+':'')+Math.round(graphData.values[i][15])+'%');
   const text = `🌀 ${t('title')}\n📅 ${fmtDate(graphData.today)}\n\n${vals.join('\n')}\n\nhttps://dopabrain.com/biorhythm/`;
   if(navigator.share) navigator.share({title:t('title'),text}).catch(()=>{});
   else{navigator.clipboard.writeText(text).catch(()=>{});alert('Copied!');}
+});
+
+document.getElementById('shareTwitterBtn')?.addEventListener('click', () => {
+  const text = document.title + ' - ' + window.location.href;
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
+  if (typeof gtag !== 'undefined') gtag('event', 'share', { method: 'twitter' });
+});
+
+document.getElementById('shareUrlBtn')?.addEventListener('click', () => {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const btn = document.getElementById('shareUrlBtn');
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => { btn.innerHTML = '📋 Copy URL'; }, 2000);
+  });
+  if (typeof gtag !== 'undefined') gtag('event', 'share', { method: 'url_copy' });
 });
 
 /* ─── Events ─── */
