@@ -297,9 +297,13 @@ body{
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px}
 ::selection{background:rgba(108,92,231,0.3);color:#fff}
+/* Skip link for accessibility */
+.skip-link{position:absolute;top:-40px;left:0;background:var(--primary,#6c5ce7);color:#fff;padding:8px 16px;z-index:10000;transition:top 0.2s;font-size:14px;border-radius:0 0 4px 0}
+.skip-link:focus{top:0}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" data-i18n="accessibility.skipToMain">Skip to main content</a>
 
 <div class="app-loader" id="app-loader">
   <div class="loader-ring"></div>
@@ -308,7 +312,7 @@ body{
 
 <div class="stars-container" id="stars"></div>
 
-<div class="app-shell">
+<div class="app-shell" id="main-content">
   <!-- Theme Toggle -->
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☀️</button>
   
