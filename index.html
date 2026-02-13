@@ -148,6 +148,10 @@ body{
 }
 .btn-calculate:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(108,92,231,0.35)}
 .btn-calculate:active{transform:translateY(0)}
+/* CTA pulse animation */
+@keyframes ctaPulse{0%,100%{box-shadow:0 4px 15px rgba(108,92,231,0.3)}50%{box-shadow:0 4px 30px rgba(108,92,231,0.6),0 0 60px rgba(108,92,231,0.2)}}
+.btn-calculate{animation:ctaPulse 2s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.btn-calculate{animation:none!important}}
 
 /* Compatibility toggle */
 .compat-toggle{
@@ -727,7 +731,10 @@ function calculate(){
   localStorage.setItem('bio-birth', birthInput);
   if(partnerInput) localStorage.setItem('bio-partner', partnerInput);
 
-  if(typeof gtag!=='undefined') gtag('event','calculate_biorhythm');
+  if(typeof gtag==='function'){
+    gtag('event','calculate_biorhythm');
+    gtag('event','engagement',{event_category:'biorhythm',event_label:'first_interaction'});
+  }
 
   document.getElementById('graphSection').classList.add('visible');
   document.getElementById('readingSection').classList.add('visible');
@@ -960,6 +967,15 @@ if(themeToggle){
     themeToggle.textContent = next === 'light' ? '🌙' : '☀️';
   });
 }
+
+/* ─── GA4 Engagement Tracking ─── */
+(function(){
+  let scrollFired=false;
+  window.addEventListener('scroll',function(){
+    if(!scrollFired&&window.scrollY>100){scrollFired=true;if(typeof gtag==='function')gtag('event','scroll_engagement',{engagement_type:'scroll'});}
+  },{passive:true});
+  setTimeout(function(){if(typeof gtag==='function')gtag('event','timer_engagement',{engagement_time_msec:5000});},5000);
+})();
 
 /* ─── Init ─── */
 function init(){
