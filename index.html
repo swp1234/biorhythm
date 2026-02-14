@@ -300,6 +300,9 @@ body{
 /* Skip link for accessibility */
 .skip-link{position:absolute;top:-40px;left:0;background:var(--primary,#6c5ce7);color:#fff;padding:8px 16px;z-index:10000;transition:top 0.2s;font-size:14px;border-radius:0 0 4px 0}
 .skip-link:focus{top:0}
+/* Theme toggle */
+.theme-toggle{position:fixed;top:16px;right:16px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:var(--text,#fff);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:18px;z-index:100;transition:all .3s;display:flex;align-items:center;justify-content:center}
+.theme-toggle:hover{background:rgba(255,255,255,0.2)}
 </style>
 </head>
 <body>
@@ -997,9 +1000,8 @@ function init(){
     if(savedPartner) document.getElementById('partnerDate').value = savedPartner;
     calculate();
   } else {
-    // First visit: show sample result immediately with a demo date
-    document.getElementById('birthDate').value = '1995-06-15';
-    calculate();
+    // First visit: show input prompt instead of auto-calculating
+    document.getElementById('birthDate').placeholder = '';
   }
 
   const loader = document.getElementById('app-loader');
