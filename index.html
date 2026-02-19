@@ -407,10 +407,10 @@ body{
     <button class="btn-share" id="btnShare">📤 <span data-i18n="share">결과 공유</span></button>
     <div class="share-buttons" id="share-section" style="display:none">
         <button class="share-btn share-twitter" id="shareTwitterBtn" aria-label="Share on Twitter">
-            <span>𝕏</span> Twitter
+            <span>𝕏</span> <span data-i18n="share.twitter">Twitter</span>
         </button>
         <button class="share-btn share-url" id="shareUrlBtn" aria-label="Copy URL">
-            📋 Copy URL
+            <span data-i18n="share.copyUrl">📋 Copy URL</span>
         </button>
     </div>
   </div>
@@ -823,7 +823,7 @@ function renderCritical(){
   criticals.sort((a,b)=>a.date-b.date);
 
   if(criticals.length===0){
-    list.innerHTML = '<div style="color:var(--text2);font-size:13px;padding:8px">✨ 이 기간에는 전환기가 없습니다.</div>';
+    list.innerHTML = '<div style="color:var(--text2);font-size:13px;padding:8px">' + (window.i18n?.t('biorhythm.noCriticalDays') || '✨ 이 기간에는 전환기가 없습니다.') + '</div>';
     return;
   }
 
@@ -905,7 +905,7 @@ document.getElementById('btnShare').addEventListener('click',()=>{
   const vals = CYCLES.map((c,i)=>t(c.name)+': '+(graphData.values[i][15]>=0?'+':'')+Math.round(graphData.values[i][15])+'%');
   const text = `🌀 ${t('title')}\n📅 ${fmtDate(graphData.today)}\n\n${vals.join('\n')}\n\nhttps://dopabrain.com/biorhythm/`;
   if(navigator.share) navigator.share({title:t('title'),text}).catch(()=>{});
-  else{navigator.clipboard.writeText(text).catch(()=>{});alert('Copied!');}
+  else{navigator.clipboard.writeText(text).catch(()=>{});alert(window.i18n?.t('share.copied') || 'Copied!');}
 });
 
 document.getElementById('shareTwitterBtn')?.addEventListener('click', () => {
@@ -917,8 +917,8 @@ document.getElementById('shareTwitterBtn')?.addEventListener('click', () => {
 document.getElementById('shareUrlBtn')?.addEventListener('click', () => {
   navigator.clipboard.writeText(window.location.href).then(() => {
     const btn = document.getElementById('shareUrlBtn');
-    btn.textContent = '✅ Copied!';
-    setTimeout(() => { btn.innerHTML = '📋 Copy URL'; }, 2000);
+    btn.textContent = (window.i18n?.t('share.copied') || '✅ Copied!');
+    setTimeout(() => { btn.innerHTML = (window.i18n?.t('share.copyUrl') || '📋 Copy URL'); }, 2000);
   });
   if (typeof gtag !== 'undefined') gtag('event', 'share', { method: 'url_copy' });
 });

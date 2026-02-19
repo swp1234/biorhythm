@@ -37,5 +37,9 @@
   "dateFormat": "{m}{d}日",
   "compatTitle": "配对结果",
   "compatScore": "配对分数",
-  "accessibility.skipToMain": "跳到主要内容"
+  "accessibility.skipToMain": "跳到主要内容",
+  "share.twitter": "推特",
+  "share.copyUrl": "📋 复制链接",
+  "share.copied": "✅ 已复制!",
+  "biorhythm.noCriticalDays": "✨ 此期间没有关键转变。"
 }

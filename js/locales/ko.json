@@ -37,5 +37,9 @@
   "dateFormat": "{m} {d}일",
   "compatTitle": "궁합 결과",
   "compatScore": "궁합 점수",
-  "accessibility.skipToMain": "본문으로 건너뛰기"
+  "accessibility.skipToMain": "본문으로 건너뛰기",
+  "share.twitter": "트위터",
+  "share.copyUrl": "📋 URL 복사",
+  "share.copied": "✅ 복사됨!",
+  "biorhythm.noCriticalDays": "✨ 이 기간에는 전환기가 없습니다."
 }

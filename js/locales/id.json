@@ -37,5 +37,9 @@
   "dateFormat": "{d} {m}",
   "compatTitle": "Kecocokan",
   "compatScore": "Skor",
-  "accessibility.skipToMain": "Lewati ke konten utama"
+  "accessibility.skipToMain": "Lewati ke konten utama",
+  "share.twitter": "Twitter",
+  "share.copyUrl": "📋 Salin URL",
+  "share.copied": "✅ Disalin!",
+  "biorhythm.noCriticalDays": "✨ Tidak ada transisi kritis dalam periode ini."
 }

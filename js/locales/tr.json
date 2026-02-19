@@ -37,5 +37,9 @@
   "dateFormat": "{d} {m}",
   "compatTitle": "Uyumluluk",
   "compatScore": "Puan",
-  "accessibility.skipToMain": "Ana içeriğe geç"
+  "accessibility.skipToMain": "Ana içeriğe geç",
+  "share.twitter": "Twitter",
+  "share.copyUrl": "📋 URL Kopyala",
+  "share.copied": "✅ Kopyalandı!",
+  "biorhythm.noCriticalDays": "✨ Bu dönemde kritik geçiş yok."
 }

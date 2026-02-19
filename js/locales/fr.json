@@ -37,5 +37,9 @@
   "dateFormat": "{d} {m}",
   "compatTitle": "Compatibilité",
   "compatScore": "Score",
-  "accessibility.skipToMain": "Aller au contenu principal"
+  "accessibility.skipToMain": "Aller au contenu principal",
+  "share.twitter": "Twitter",
+  "share.copyUrl": "📋 Copier URL",
+  "share.copied": "✅ Copié!",
+  "biorhythm.noCriticalDays": "✨ Pas de transitions critiques dans cette période."
 }

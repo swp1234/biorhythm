@@ -37,5 +37,9 @@
   "dateFormat": "{m}{d}日",
   "compatTitle": "相性結果",
   "compatScore": "相性スコア",
-  "accessibility.skipToMain": "メインコンテンツへスキップ"
+  "accessibility.skipToMain": "メインコンテンツへスキップ",
+  "share.twitter": "Twitter",
+  "share.copyUrl": "📋 URLコピー",
+  "share.copied": "✅ コピー済み!",
+  "biorhythm.noCriticalDays": "✨ この期間に重要な転換点はありません。"
 }
