@@ -36,5 +36,6 @@
   "months": "जन,फ़र,मार्च,अप्रै,मई,जून,जुल,अग,सित,अक्टू,नव,दिस",
   "dateFormat": "{d} {m}",
   "compatTitle": "अनुकूलता",
-  "compatScore": "अंक"
+  "compatScore": "अंक",
+  "accessibility.skipToMain": "मुख्य सामग्री पर जाएं"
 }

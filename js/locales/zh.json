@@ -36,5 +36,6 @@
   "months": "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月",
   "dateFormat": "{m}{d}日",
   "compatTitle": "配对结果",
-  "compatScore": "配对分数"
+  "compatScore": "配对分数",
+  "accessibility.skipToMain": "跳到主要内容"
 }

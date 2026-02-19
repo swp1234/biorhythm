@@ -36,5 +36,6 @@
   "months": "Янв,Фев,Мар,Апр,Май,Июн,Июл,Авг,Сен,Окт,Ноя,Дек",
   "dateFormat": "{d} {m}",
   "compatTitle": "Совместимость",
-  "compatScore": "Оценка"
+  "compatScore": "Оценка",
+  "accessibility.skipToMain": "Перейти к основному содержанию"
 }

@@ -36,5 +36,6 @@
   "months": "Oca,Şub,Mar,Nis,May,Haz,Tem,Ağu,Eyl,Eki,Kas,Ara",
   "dateFormat": "{d} {m}",
   "compatTitle": "Uyumluluk",
-  "compatScore": "Puan"
+  "compatScore": "Puan",
+  "accessibility.skipToMain": "Ana içeriğe geç"
 }

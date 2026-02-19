@@ -36,5 +36,6 @@
   "months": "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月",
   "dateFormat": "{m}{d}日",
   "compatTitle": "相性結果",
-  "compatScore": "相性スコア"
+  "compatScore": "相性スコア",
+  "accessibility.skipToMain": "メインコンテンツへスキップ"
 }

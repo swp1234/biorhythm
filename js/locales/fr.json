@@ -36,5 +36,6 @@
   "months": "Jan,Fév,Mar,Avr,Mai,Jun,Jul,Aoû,Sep,Oct,Nov,Déc",
   "dateFormat": "{d} {m}",
   "compatTitle": "Compatibilité",
-  "compatScore": "Score"
+  "compatScore": "Score",
+  "accessibility.skipToMain": "Aller au contenu principal"
 }
