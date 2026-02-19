@@ -41,5 +41,8 @@
   "share.twitter": "Twitter",
   "share.copyUrl": "📋 Copiar URL",
   "share.copied": "✅ ¡Copiado!",
-  "biorhythm.noCriticalDays": "✨ Sin transiciones críticas en este período."
+  "biorhythm.noCriticalDays": "✨ Sin transiciones críticas en este período.",
+  "biorhythm": {
+    "noCriticalDays": "✨ No hay días críticos en este período."
+  }
 }

@@ -41,5 +41,8 @@
   "share.twitter": "Twitter",
   "share.copyUrl": "📋 URLコピー",
   "share.copied": "✅ コピー済み!",
-  "biorhythm.noCriticalDays": "✨ この期間に重要な転換点はありません。"
+  "biorhythm.noCriticalDays": "✨ この期間に重要な転換点はありません。",
+  "biorhythm": {
+    "noCriticalDays": "✨ この期間に転換期はありません。"
+  }
 }

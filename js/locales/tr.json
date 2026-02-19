@@ -41,5 +41,8 @@
   "share.twitter": "Twitter",
   "share.copyUrl": "📋 URL Kopyala",
   "share.copied": "✅ Kopyalandı!",
-  "biorhythm.noCriticalDays": "✨ Bu dönemde kritik geçiş yok."
+  "biorhythm.noCriticalDays": "✨ Bu dönemde kritik geçiş yok.",
+  "biorhythm": {
+    "noCriticalDays": "✨ Bu dönemde kritik gün yok."
+  }
 }

@@ -41,5 +41,8 @@
   "share.twitter": "推特",
   "share.copyUrl": "📋 复制链接",
   "share.copied": "✅ 已复制!",
-  "biorhythm.noCriticalDays": "✨ 此期间没有关键转变。"
+  "biorhythm.noCriticalDays": "✨ 此期间没有关键转变。",
+  "biorhythm": {
+    "noCriticalDays": "✨ 此期间没有转换期。"
+  }
 }

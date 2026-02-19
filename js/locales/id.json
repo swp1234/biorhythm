@@ -41,5 +41,8 @@
   "share.twitter": "Twitter",
   "share.copyUrl": "📋 Salin URL",
   "share.copied": "✅ Disalin!",
-  "biorhythm.noCriticalDays": "✨ Tidak ada transisi kritis dalam periode ini."
+  "biorhythm.noCriticalDays": "✨ Tidak ada transisi kritis dalam periode ini.",
+  "biorhythm": {
+    "noCriticalDays": "✨ Tidak ada hari kritis dalam periode ini."
+  }
 }

@@ -41,5 +41,8 @@
   "share.twitter": "트위터",
   "share.copyUrl": "📋 URL 복사",
   "share.copied": "✅ 복사됨!",
-  "biorhythm.noCriticalDays": "✨ 이 기간에는 전환기가 없습니다."
+  "biorhythm.noCriticalDays": "✨ 이 기간에는 전환기가 없습니다.",
+  "biorhythm": {
+    "noCriticalDays": "✨ 이 기간에는 전환기가 없습니다."
+  }
 }
