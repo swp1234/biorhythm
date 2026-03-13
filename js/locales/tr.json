@@ -44,5 +44,12 @@
   "biorhythm.noCriticalDays": "✨ Bu dönemde kritik geçiş yok.",
   "biorhythm": {
     "noCriticalDays": "✨ Bu dönemde kritik gün yok."
+  },
+  "related": {
+    "title": "Daha fazla keşfet",
+    "lifeInNumbers": "Sayılarla hayat",
+    "bmiCalculator": "BMI hesaplayıcı",
+    "stressCheck": "Stres testi",
+    "luckMeter": "Şans ölçer"
   }
 }

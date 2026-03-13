@@ -44,5 +44,12 @@
   "biorhythm.noCriticalDays": "✨ इस अवधि में कोई महत्वपूर्ण बदलाव नहीं।",
   "biorhythm": {
     "noCriticalDays": "✨ इस अवधि में कोई महत्वपूर्ण दिन नहीं है।"
+  },
+  "related": {
+    "title": "और खोजें",
+    "lifeInNumbers": "जीवन संख्या",
+    "bmiCalculator": "BMI कैलकुलेटर",
+    "stressCheck": "स्ट्रेस चेक",
+    "luckMeter": "लक मीटर"
   }
 }

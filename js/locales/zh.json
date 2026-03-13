@@ -44,5 +44,12 @@
   "biorhythm.noCriticalDays": "✨ 此期间没有关键转变。",
   "biorhythm": {
     "noCriticalDays": "✨ 此期间没有转换期。"
+  },
+  "related": {
+    "title": "探索更多",
+    "lifeInNumbers": "人生数字",
+    "bmiCalculator": "BMI计算器",
+    "stressCheck": "压力检测",
+    "luckMeter": "幸运测量"
   }
 }

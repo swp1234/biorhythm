@@ -44,5 +44,12 @@
   "biorhythm.noCriticalDays": "✨ No critical transitions in this period.",
   "biorhythm": {
     "noCriticalDays": "✨ No critical days in this period."
+  },
+  "related": {
+    "title": "More to Explore",
+    "lifeInNumbers": "Life in Numbers",
+    "bmiCalculator": "BMI Calculator",
+    "stressCheck": "Stress Check",
+    "luckMeter": "Luck Meter"
   }
 }

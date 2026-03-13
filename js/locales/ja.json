@@ -44,5 +44,12 @@
   "biorhythm.noCriticalDays": "✨ この期間に重要な転換点はありません。",
   "biorhythm": {
     "noCriticalDays": "✨ この期間に転換期はありません。"
+  },
+  "related": {
+    "title": "もっと楽しむ",
+    "lifeInNumbers": "人生の数字",
+    "bmiCalculator": "BMI計算機",
+    "stressCheck": "ストレスチェック",
+    "luckMeter": "運勢メーター"
   }
 }

@@ -44,5 +44,12 @@
   "biorhythm.noCriticalDays": "✨ Tidak ada transisi kritis dalam periode ini.",
   "biorhythm": {
     "noCriticalDays": "✨ Tidak ada hari kritis dalam periode ini."
+  },
+  "related": {
+    "title": "Jelajahi lainnya",
+    "lifeInNumbers": "Hidup dalam angka",
+    "bmiCalculator": "Kalkulator BMI",
+    "stressCheck": "Cek stres",
+    "luckMeter": "Pengukur keberuntungan"
   }
 }

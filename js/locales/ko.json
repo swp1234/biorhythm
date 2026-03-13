@@ -44,5 +44,12 @@
   "biorhythm.noCriticalDays": "✨ 이 기간에는 전환기가 없습니다.",
   "biorhythm": {
     "noCriticalDays": "✨ 이 기간에는 전환기가 없습니다."
+  },
+  "related": {
+    "title": "더 많은 콘텐츠",
+    "lifeInNumbers": "인생 숫자",
+    "bmiCalculator": "BMI 계산기",
+    "stressCheck": "스트레스 체크",
+    "luckMeter": "행운 측정기"
   }
 }
