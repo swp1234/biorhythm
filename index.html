@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0a0a1a">
 <title>Biorhythm Calculator — Know Your Peak Days Free</title>
 <meta name="description" content="Enter your birthday and instantly see today's physical, emotional & intellectual biorhythm. Free calculator with beautiful charts — find your best days now!">
-    <meta name="dateModified" content="2026-06-19">
+    <meta name="dateModified" content="2026-07-07">
 <meta name="keywords" content="바이오리듬, biorhythm, 운세, 건강리듬, 신체리듬, 감성리듬, 지성리듬, 바이오리듬 계산기">
 <link rel="canonical" href="https://dopabrain.com/biorhythm/">
 
@@ -580,7 +580,8 @@ const LANG = {
   tr:{title:'Biyoritm Hesaplayıcı',subtitle:'Fiziksel, duygusal ve entelektüel ritimlerinizi keşfedin',birthLabel:'Doğum Tarihi',calculate:'Hesapla',compatLabel:'Uyumluluk Modu',partnerLabel:'Partnerin Doğum Tarihi',graphTitle:'Biyoritm Grafiği',physical:'Fiziksel',emotional:'Duygusal',intellectual:'Entelektüel',criticalTitle:'⚡ Kritik Günler',share:'Paylaş',loader:'Yükleniyor...',ad:'Reklam',today:'Bugün',statusHigh:'Zirve',statusMid:'Orta',statusLow:'Düşük',statusCritical:'Geçiş',descPhysicalHigh:'Enerji dolu gün!',descPhysicalMid:'Normal durum.',descPhysicalLow:'Düşük enerji. Dinlenin.',descPhysicalCritical:'Fiziksel geçiş.',descEmotionalHigh:'Duygusal açıdan zengin!',descEmotionalMid:'Stabil.',descEmotionalLow:'Dalgalanmalar olabilir.',descEmotionalCritical:'Duygusal geçiş.',descIntellectualHigh:'Keskin zihin!',descIntellectualMid:'Normal konsantrasyon.',descIntellectualLow:'Konsantrasyon düşebilir.',descIntellectualCritical:'Entelektüel geçiş.',criticalPhysical:'Fiziksel geçiş',criticalEmotional:'Duygusal geçiş',criticalIntellectual:'Entelektüel geçiş',months:'Oca,Şub,Mar,Nis,May,Haz,Tem,Ağu,Eyl,Eki,Kas,Ara',dateFormat:'{d} {m}',compatTitle:'Uyumluluk',compatScore:'Puan'}
 };
 
-let currentLang = localStorage.getItem('bio-lang') || (navigator.language||'en').slice(0,2);
+const urlLang = new URLSearchParams(window.location.search || '').get('lang');
+let currentLang = (urlLang && LANG[urlLang]) ? urlLang : (localStorage.getItem('bio-lang') || (navigator.language||'en').slice(0,2));
 if(!LANG[currentLang]) currentLang = 'en';
 
 function t(key){ return (LANG[currentLang]||LANG.en)[key] || (LANG.en)[key] || key; }
