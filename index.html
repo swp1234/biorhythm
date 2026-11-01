@@ -323,6 +323,7 @@ body{
 .share-section{display:none;text-align:center;margin-bottom:24px}
 .share-section.visible{display:block}
 .btn-share{
+  min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;
   padding:12px 24px;border:1px solid var(--surface-border);border-radius:12px;
   background:var(--surface);color:var(--text);font-size:13px;font-family:inherit;
   cursor:pointer;transition:all .2s;backdrop-filter:blur(10px);
@@ -494,11 +495,11 @@ body{
 
 <div style="max-width:420px;margin:20px auto;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">
   <h3 data-i18n="related.title" style="font-size:16px;color:#a0a0b8;margin-bottom:12px;text-align:center;">More to Explore</h3>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-    <a href="/life-in-numbers/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;"><span style="font-size:28px;">🔢</span><span data-i18n="related.lifeInNumbers" style="font-size:12px;font-weight:600;color:#a0a0b8;">Life in Numbers</span></a>
-    <a href="/bmi-calculator/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;"><span style="font-size:28px;">📏</span><span data-i18n="related.bmiCalculator" style="font-size:12px;font-weight:600;color:#a0a0b8;">BMI Calculator</span></a>
-    <a href="/stress-check/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;"><span style="font-size:28px;">💆</span><span data-i18n="related.stressCheck" style="font-size:12px;font-weight:600;color:#a0a0b8;">Stress Check</span></a>
-    <a href="/dream-fortune/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;"><span style="font-size:28px;">🌙</span><span data-i18n="related.dreamFortune" style="font-size:12px;font-weight:600;color:#a0a0b8;">Dream Fortune</span></a>
+  <div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:10px;">
+    <a href="/life-in-numbers/" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:44px;min-width:0;box-sizing:border-box;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;"><span style="font-size:28px;">🔢</span><span data-i18n="related.lifeInNumbers" style="font-size:12px;font-weight:600;color:#a0a0b8;">Life in Numbers</span></a>
+    <a href="/bmi-calculator/" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:44px;min-width:0;box-sizing:border-box;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;"><span style="font-size:28px;">📏</span><span data-i18n="related.bmiCalculator" style="font-size:12px;font-weight:600;color:#a0a0b8;">BMI Calculator</span></a>
+    <a href="/stress-check/" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:44px;min-width:0;box-sizing:border-box;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;"><span style="font-size:28px;">💆</span><span data-i18n="related.stressCheck" style="font-size:12px;font-weight:600;color:#a0a0b8;">Stress Check</span></a>
+    <a href="/dream-fortune/" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:44px;min-width:0;box-sizing:border-box;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;"><span style="font-size:28px;">🌙</span><span data-i18n="related.dreamFortune" style="font-size:12px;font-weight:600;color:#a0a0b8;">Dream Fortune</span></a>
   </div>
 </div>
 <script src="/portal/js/cross-promo.js" defer></script>
@@ -566,6 +567,39 @@ function updateUI(){
     btn.classList.toggle('active', btn.dataset.lang===currentLang);
   });
   document.documentElement.lang = currentLang;
+  preserveLanguageLinks();
+}
+
+function preserveLanguageLinks(){
+  var lang = currentLang;
+  var relatedCards = document.querySelectorAll('a[href*="/life-in-numbers/"], a[href*="/bmi-calculator/"], a[href*="/stress-check/"], a[href*="/dream-fortune/"]');
+  relatedCards.forEach(function(card){
+    var rawHref = card.getAttribute('href');
+    if(!rawHref) return;
+    try {
+      var url = new URL(rawHref, window.location.origin);
+      if(lang && lang !== 'en'){
+        url.searchParams.set('lang', lang);
+      } else {
+        url.searchParams.delete('lang');
+      }
+      url.searchParams.set('source', 'biorhythm_result');
+      card.href = url.pathname + url.search;
+    } catch(e) {}
+    if(!card.__ctaBound){
+      card.__ctaBound = true;
+      card.addEventListener('click', function(){
+        if(typeof gtag === 'function'){
+          gtag('event', 'content_cta_click', {
+            cta_surface: 'related_tools',
+            destination: card.getAttribute('href'),
+            source: 'biorhythm_result',
+            lang: lang || 'en'
+          });
+        }
+      });
+    }
+  });
 }
 
 /* ─── Stars ─── */
@@ -1057,7 +1091,6 @@ if(themeToggle){
   window.addEventListener('scroll',function(){
     if(!scrollFired&&window.scrollY>100){scrollFired=true;if(typeof gtag==='function')gtag('event','scroll_engagement',{engagement_type:'scroll'});}
   },{passive:true});
-  setTimeout(function(){if(typeof gtag==='function')gtag('event','timer_engagement',{engagement_time_msec:5000});},5000);
 })();
 
 /* ─── Init ─── */
