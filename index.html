@@ -370,7 +370,67 @@ body{
 /* Theme toggle */
 .theme-toggle{position:fixed;top:16px;right:16px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:var(--text,#fff);width:44px;height:44px;min-width:44px;min-height:44px;border-radius:50%;cursor:pointer;font-size:18px;z-index:100;transition:all .3s;display:flex;align-items:center;justify-content:center}
 .theme-toggle:hover{background:rgba(255,255,255,0.2)}
+/* Educational & Scientific Guide Section */
+.about-test{width:100%;max-width:540px;margin:24px auto 16px;border:1px solid var(--surface-border);border-radius:16px;background:var(--surface);text-align:left;overflow:hidden;box-sizing:border-box}
+.about-test summary{display:flex;align-items:center;gap:8px;min-height:46px;padding:13px 18px;color:var(--accent2);cursor:pointer;font-size:14px;font-weight:700;list-style:none;box-sizing:border-box;touch-action:manipulation}
+.about-test summary::-webkit-details-marker{display:none}
+.about-test summary::after{content:'\25BC';margin-left:auto;color:var(--text2);font-size:11px;transition:transform 0.25s ease}
+.about-test[open] summary::after{transform:rotate(180deg)}
+.about-test-body{padding:0 18px 20px;box-sizing:border-box}
+.about-test-body p{margin:0 0 12px;color:var(--text2);font-size:13px;line-height:1.7}
+.about-test-body .about-test-note{margin-bottom:14px;color:var(--text2);font-size:12px;font-style:italic;line-height:1.6;border-left:2px solid var(--accent);padding-left:8px}
+.about-section-heading{color:var(--text);font-size:14px;font-weight:700;margin:18px 0 10px;border-left:3px solid var(--accent);padding-left:8px}
+.about-guide-list{list-style:none;padding:0;margin:0 0 14px}
+.about-guide-list li{padding:7px 0;font-size:13px;line-height:1.6;color:var(--text2);border-bottom:1px solid rgba(255,255,255,0.05)}
+.about-guide-list li:last-child{border-bottom:none}
+.about-guide-list li strong{color:var(--text);font-weight:600}
+.about-faq-item{margin-bottom:12px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04)}
+.about-faq-q{display:block;font-size:13px;color:var(--text);margin-bottom:6px;font-weight:600}
+.about-faq-a{margin:0 !important;font-size:12px !important;line-height:1.6 !important;color:var(--text2) !important}
+.about-review-meta{font-size:11px;color:var(--text2);opacity:0.8;margin-top:16px;padding-top:12px;border-top:1px solid var(--surface-border)}
+
 </style>
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How are physical, emotional, and intellectual biorhythms calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Biorhythms are calculated using periodic sinusoidal wave formulas: R(t) = sin(2 * pi * t / T), where t is the number of days lived since birth. The three primary cycle lengths are Physical (23 days), Emotional (28 days), and Intellectual (33 days)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is biorhythm theory considered a medical or clinical science?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Modern chronobiology recognizes 24-hour circadian and infradian biological rhythms regulated by the brain's suprachiasmatic nucleus (SCN), but treats fixed lifetime sinusoidal biorhythms as a reflective self-awareness model rather than clinical medicine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a 'critical day' in a biorhythm chart?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A critical day occurs when a sinusoidal curve crosses the zero-axis baseline, transitioning between positive and negative phases. In traditional biorhythm interpretations, these zero-crossing transition days symbolize times to pace yourself and stay mindful."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my birth date saved or transmitted anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. All calculations are executed 100% locally in your browser. No birthdates, compatibility pairs, or results are ever collected, logged, or sent to external servers."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 <a href="#main-content" class="skip-link" data-i18n="accessibility.skipToMain">Skip to main content</a>
@@ -489,7 +549,46 @@ body{
   </footer>
 </div>
 
-<div class="related-tests" style="max-width:420px;margin:20px auto;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">
+
+  <!-- Educational & Scientific Guide Section -->
+  <details class="about-test faq-accordion" open>
+    <summary data-i18n="guide.summaryTitle">About Biorhythms: Formula, Cycles & Frequently Asked Questions</summary>
+    <div class="about-test-body faq-content">
+      <p data-i18n="guide.mathRule">Biorhythms calculate periodic sinusoidal waves based on the exact number of elapsed days since birth. The three primary cycles are Physical (23 days), Emotional (28 days), and Intellectual (33 days), modeled by the formula R(t) = sin(2πt / T).</p>
+      <p class="about-test-note" data-i18n="guide.boundary">This calculator is an educational self-reflection and wellness tracking tool. It does not provide medical diagnoses or replace clinical chronobiology evaluations.</p>
+      
+      <h3 class="about-section-heading" data-i18n="guide.cyclesTitle">The Three Primary Cycles</h3>
+      <ul class="about-guide-list">
+        <li><strong data-i18n="guide.physicalCycle">Physical Cycle (23 Days):</strong> <span data-i18n="guide.physicalDesc">Governs energy levels, physical stamina, coordination, and resistance to fatigue.</span></li>
+        <li><strong data-i18n="guide.emotionalCycle">Emotional Cycle (28 Days):</strong> <span data-i18n="guide.emotionalDesc">Influences mood swings, nervous system sensitivity, creativity, and empathy.</span></li>
+        <li><strong data-i18n="guide.intellectualCycle">Intellectual Cycle (33 Days):</strong> <span data-i18n="guide.intellectualDesc">Shapes analytical thinking, mental alertness, memory recall, and logical decision-making.</span></li>
+      </ul>
+
+      <h3 class="about-section-heading faq-heading" data-i18n="guide.faqTitle">Frequently Asked Questions</h3>
+      <div class="faq-item about-faq-item">
+        <strong class="about-faq-q" data-i18n="guide.faq1Q">Q: How are biorhythm curves calculated?</strong>
+        <p class="about-faq-a" data-i18n="guide.faq1A">A: Each rhythm starts at birth (day 0) and cycles sinusoidally between +100% (peak vitality) and -100% (restoration phase), crossing zero at half-cycles.</p>
+      </div>
+      <div class="faq-item about-faq-item">
+        <strong class="about-faq-q" data-i18n="guide.faq2Q">Q: Is biorhythm theory medical science?</strong>
+        <p class="about-faq-a" data-i18n="guide.faq2A">A: No. While modern medicine studies circadian rhythms (24h internal clocks governed by the SCN), fixed lifetime biorhythms serve as a fun reflective journaling framework.</p>
+      </div>
+      <div class="faq-item about-faq-item">
+        <strong class="about-faq-q" data-i18n="guide.faq3Q">Q: What does a 'critical transition day' mean?</strong>
+        <p class="about-faq-a" data-i18n="guide.faq3A">A: Critical days occur when a curve crosses the baseline (0%). They signify transitional shifts where mindfulness and pacing yourself are encouraged.</p>
+      </div>
+      <div class="faq-item about-faq-item">
+        <strong class="about-faq-q" data-i18n="guide.faq4Q">Q: Is my birth date saved or transmitted anywhere?</strong>
+        <p class="about-faq-a" data-i18n="guide.faq4A">A: No. All calculations happen entirely in your local browser sandbox. No personal dates are stored or sent to remote servers.</p>
+      </div>
+
+      <div class="about-review-meta">
+        <span data-i18n="guide.reviewDate">Editorial Review: November 2026</span> • <span data-i18n="guide.reviewTeam">DopaBrain Chronobiology Team</span>
+      </div>
+    </div>
+  </details>
+
+  <div class="related-tests" style="max-width:420px;margin:20px auto;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">
   <h3 data-i18n="related.title" style="font-size:16px;color:#a0a0b8;margin-bottom:12px;text-align:center;">More to Explore</h3>
   <div class="related-grid" id="related-grid" style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:10px;">
     <a href="/life-in-numbers/" data-base-href="/life-in-numbers/" class="related-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:44px;min-width:44px;box-sizing:border-box;touch-action:manipulation;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;"><span style="font-size:28px;">🔢</span><span data-i18n="related.lifeInNumbers" style="font-size:12px;font-weight:600;color:#a0a0b8;">Life in Numbers</span></a>
@@ -547,6 +646,294 @@ const LANG = {
   id:{title:'Kalkulator Biorhythm',subtitle:'Temukan ritme fisik, emosional & intelektual Anda',birthLabel:'Tanggal Lahir',calculate:'Hitung',compatLabel:'Mode Kecocokan',partnerLabel:'Tanggal Lahir Pasangan',graphTitle:'Grafik Biorhythm',physical:'Fisik',emotional:'Emosional',intellectual:'Intelektual',criticalTitle:'⚡ Hari Kritis',share:'Bagikan',loader:'Memuat...',ad:'Iklan',today:'Hari ini',statusHigh:'Puncak',statusMid:'Sedang',statusLow:'Rendah',statusCritical:'Transisi',descPhysicalHigh:'Hari penuh energi!',descPhysicalMid:'Kondisi normal.',descPhysicalLow:'Energi rendah. Istirahat.',descPhysicalCritical:'Transisi fisik.',descEmotionalHigh:'Hari kaya emosi!',descEmotionalMid:'Stabil.',descEmotionalLow:'Fluktuasi mungkin terjadi.',descEmotionalCritical:'Transisi emosional.',descIntellectualHigh:'Pikiran tajam!',descIntellectualMid:'Konsentrasi normal.',descIntellectualLow:'Konsentrasi mungkin turun.',descIntellectualCritical:'Transisi intelektual.',criticalPhysical:'Transisi fisik',criticalEmotional:'Transisi emosional',criticalIntellectual:'Transisi intelektual',months:'Jan,Feb,Mar,Apr,Mei,Jun,Jul,Agu,Sep,Okt,Nov,Des',dateFormat:'{d} {m}',compatTitle:'Kecocokan',compatScore:'Skor','related.title':'Jelajahi Lebih Lanjut','related.lifeInNumbers':'Hidup dalam Angka','related.bmiCalculator':'Kalkulator BMI','related.stressCheck':'Cek Stres','related.dreamFortune':'Tafsir Mimpi'},
   tr:{title:'Biyoritm Hesaplayıcı',subtitle:'Fiziksel, duygusal ve entelektüel ritimlerinizi keşfedin',birthLabel:'Doğum Tarihi',calculate:'Hesapla',compatLabel:'Uyumluluk Modu',partnerLabel:'Partnerin Doğum Tarihi',graphTitle:'Biyoritm Grafiği',physical:'Fiziksel',emotional:'Duygusal',intellectual:'Entelektüel',criticalTitle:'⚡ Kritik Günler',share:'Paylaş',loader:'Yükleniyor...',ad:'Reklam',today:'Bugün',statusHigh:'Zirve',statusMid:'Orta',statusLow:'Düşük',statusCritical:'Geçiş',descPhysicalHigh:'Enerji dolu gün!',descPhysicalMid:'Normal durum.',descPhysicalLow:'Düşük enerji. Dinlenin.',descPhysicalCritical:'Fiziksel geçiş.',descEmotionalHigh:'Duygusal açıdan zengin!',descEmotionalMid:'Stabil.',descEmotionalLow:'Dalgalanmalar olabilir.',descEmotionalCritical:'Duygusal geçiş.',descIntellectualHigh:'Keskin zihin!',descIntellectualMid:'Normal konsantrasyon.',descIntellectualLow:'Konsantrasyon düşebilir.',descIntellectualCritical:'Entelektüel geçiş.',criticalPhysical:'Fiziksel geçiş',criticalEmotional:'Duygusal geçiş',criticalIntellectual:'Entelektüel geçiş',months:'Oca,Şub,Mar,Nis,May,Haz,Tem,Ağu,Eyl,Eki,Kas,Ara',dateFormat:'{d} {m}',compatTitle:'Uyumluluk',compatScore:'Puan','related.title':'Daha Fazlasını Keşfet','related.lifeInNumbers':'Sayılarla Hayat','related.bmiCalculator':'VKİ Hesaplayıcı','related.stressCheck':'Stres Kontrolü','related.dreamFortune':'Rüya Yorumu'}
 };
+
+// Educational Guide Translations Extension
+(function extendLangWithGuide() {
+  const guideData = {
+  "en": {
+    "guide.summaryTitle": "About Biorhythms: Formula, Cycles & Frequently Asked Questions",
+    "guide.mathRule": "Biorhythms calculate periodic sinusoidal waves based on the exact number of elapsed days since birth. The three primary cycles are Physical (23 days), Emotional (28 days), and Intellectual (33 days), modeled by the formula R(t) = sin(2πt / T).",
+    "guide.boundary": "This calculator is an educational self-reflection and wellness tracking tool. It does not provide medical diagnoses or replace clinical chronobiology evaluations.",
+    "guide.cyclesTitle": "The Three Primary Cycles",
+    "guide.physicalCycle": "Physical Cycle (23 Days):",
+    "guide.physicalDesc": "Governs energy levels, physical stamina, coordination, and resistance to fatigue.",
+    "guide.emotionalCycle": "Emotional Cycle (28 Days):",
+    "guide.emotionalDesc": "Influences mood swings, nervous system sensitivity, creativity, and empathy.",
+    "guide.intellectualCycle": "Intellectual Cycle (33 Days):",
+    "guide.intellectualDesc": "Shapes analytical thinking, mental alertness, memory recall, and logical decision-making.",
+    "guide.faqTitle": "Frequently Asked Questions",
+    "guide.faq1Q": "Q: How are biorhythm curves calculated?",
+    "guide.faq1A": "A: Each rhythm starts at birth (day 0) and cycles sinusoidally between +100% (peak vitality) and -100% (restoration phase), crossing zero at half-cycles.",
+    "guide.faq2Q": "Q: Is biorhythm theory medical science?",
+    "guide.faq2A": "A: No. While modern medicine studies circadian rhythms (24h internal clocks governed by the SCN), fixed lifetime biorhythms serve as a fun reflective journaling framework.",
+    "guide.faq3Q": "Q: What does a 'critical transition day' mean?",
+    "guide.faq3A": "A: Critical days occur when a curve crosses the baseline (0%). They signify transitional shifts where mindfulness and pacing yourself are encouraged.",
+    "guide.faq4Q": "Q: Is my birth date saved or transmitted anywhere?",
+    "guide.faq4A": "A: No. All calculations happen entirely in your local browser sandbox. No personal dates are stored or sent to remote servers.",
+    "guide.reviewDate": "Editorial Review: November 2026",
+    "guide.reviewTeam": "DopaBrain Chronobiology Team"
+  },
+  "ko": {
+    "guide.summaryTitle": "바이오리듬 과학 가이드: 계산 공식, 3대 주기 및 크로노바이올로지 FAQ",
+    "guide.mathRule": "바이오리듬은 태어난 날로부터 경과된 일수를 기준으로 사인파(Sinusoidal wave) 공식을 통해 계산됩니다: R(t) = sin(2πt / T). 3대 기본 주기는 신체(23일), 감성(28일), 지성(33일)입니다.",
+    "guide.boundary": "본 계산기는 자기 성찰과 웰빙 리듬 관리를 돕는 교육용 도구이며, 임상 의학적 진단이나 의료 행위를 대신하지 않습니다.",
+    "guide.cyclesTitle": "바이오리듬의 3대 핵심 주기",
+    "guide.physicalCycle": "신체 리듬 (23일 주기):",
+    "guide.physicalDesc": "체력, 지구력, 신체적 반응 속도 및 피로 회복력을 조율합니다.",
+    "guide.emotionalCycle": "감성 리듬 (28일 주기):",
+    "guide.emotionalDesc": "기분 변화, 감수성, 창의적 영감 및 대인 관계 공감 능력을 반영합니다.",
+    "guide.intellectualCycle": "지성 리듬 (33일 주기):",
+    "guide.intellectualDesc": "집중력, 논리적 판단력, 기억력 및 분석적 문제 해결력을 나타냅니다.",
+    "guide.faqTitle": "자주 묻는 질문 (FAQ)",
+    "guide.faq1Q": "Q: 바이오리듬 그래프는 어떤 수식으로 계산되나요?",
+    "guide.faq1A": "A: 출생일을 0점으로 두고 각 주기(23일, 28일, 33일)마다 정현파 파동 공식 R(t) = sin(2πt / T)를 적용하여 +100%(최고조)에서 -100%(재충전기) 사이로 진동합니다.",
+    "guide.faq2Q": "Q: 바이오리듬은 의학적으로 공인된 과학인가요?",
+    "guide.faq2A": "A: 아닙니다. 현대 생물학은 시교차상핵(SCN)이 통제하는 24시간 일주기 리듬(Circadian Rhythm)을 인정하지만, 고정된 평생 3대 바이오리듬은 흥미롭고 유익한 자기 돌봄 가이드로 활용됩니다.",
+    "guide.faq3Q": "Q: '주의가 필요한 위험일(전환기)'이란 무엇인가요?",
+    "guide.faq3A": "A: 사인파 곡선이 중심 기준선(0%)을 위나 아래로 교차 통과하는 날입니다. 리듬의 극성이 바뀌는 시점으로 컨디션을 조절하고 무리하지 않는 것이 권장됩니다.",
+    "guide.faq4Q": "Q: 입력한 생년월일이 서버에 저장되거나 전송되나요?",
+    "guide.faq4A": "A: 절대 저장되지 않습니다. 모든 계산은 브라우저 내부에서만 즉시 처리되며 어떤 외부 서버로도 전송되지 않습니다.",
+    "guide.reviewDate": "콘텐츠 검수: 2026년 11월",
+    "guide.reviewTeam": "DopaBrain 크로노바이올로지 팀"
+  },
+  "ja": {
+    "guide.summaryTitle": "バイオリズム科学ガイド：計算式、3大周期＆FAQ",
+    "guide.mathRule": "バイオリズムは生後経過日数に基づいて正弦波（サイン波）公式 R(t) = sin(2πt / T) で算出されます。3大周期は身体（23日）、感情（28日）、知性（33日）です。",
+    "guide.boundary": "この計算ツールは自己理解とライフスタイル調整のための教育的ウェルネスツールであり、医学的診断に代わるものではありません。",
+    "guide.cyclesTitle": "3大基本周期",
+    "guide.physicalCycle": "身体リズム (23日周期):",
+    "guide.physicalDesc": "体力、持久力、運動能力、疲労回復力に影響を与えます。",
+    "guide.emotionalCycle": "感情リズム (28日周期):",
+    "guide.emotionalDesc": "気分の安定性、感受性、直感力、共感力に影響を与えます。",
+    "guide.intellectualCycle": "知性リズム (33日周期):",
+    "guide.intellectualDesc": "論理的思考、集中力、記憶力、意思決定能力に影響を与えます。",
+    "guide.faqTitle": "よくある質問 (FAQ)",
+    "guide.faq1Q": "Q: バイオリズムはどのように計算されますか？",
+    "guide.faq1A": "A: 誕生日からの経過日数を基に正弦波公式で算出し、+100%（高調期）から-100%（低調期）の間で周期的に振動します。",
+    "guide.faq2Q": "Q: バイオリズムは医学的科学ですか？",
+    "guide.faq2A": "A: いいえ。現代の時間生物学では体内時計（概日リズム）が研究されていますが、生涯周期バイオリズムは自己管理と振り返りのためのモデルです。",
+    "guide.faq3Q": "Q: 「要注意日（不安定日）」とは何ですか？",
+    "guide.faq3A": "A: 波がゼロ基準線（0%）を横切る日です。プラスからマイナス、またはその逆に移行する転換期で、慎重な行動が推奨されます。",
+    "guide.faq4Q": "Q: 入力した生年月日は保存されますか？",
+    "guide.faq4A": "A: 一切保存されません。すべての計算はブラウザ内でローカルに実行され、外部サーバーに送信されることはありません。",
+    "guide.reviewDate": "コンテンツ監修：2026年11月",
+    "guide.reviewTeam": "DopaBrain 時間生物学チーム"
+  },
+  "zh": {
+    "guide.summaryTitle": "生物节律科学指南：计算公式、三大周期与FAQ",
+    "guide.mathRule": "生物节律基于出生以来的总天数，通过正弦波公式 R(t) = sin(2πt / T) 计算得出。三大基本周期为体力（23天）、情绪（28天）和智力（33天）。",
+    "guide.boundary": "本计算器是一项用于自我观察和健康节奏调节的教育工具，不构成临床医疗诊断。",
+    "guide.cyclesTitle": "三大核心周期",
+    "guide.physicalCycle": "体力周期 (23天):",
+    "guide.physicalDesc": "调控体能、耐力、身体协调性及抵抗疲劳的能力。",
+    "guide.emotionalCycle": "情绪周期 (28天):",
+    "guide.emotionalDesc": "影响情绪波动、直觉创造力、敏感度与人际共情。",
+    "guide.intellectualCycle": "智力周期 (33天):",
+    "guide.intellectualDesc": "体现逻辑判断、分析思考能力、工作记忆及注意力。",
+    "guide.faqTitle": "常见问题解答 (FAQ)",
+    "guide.faq1Q": "Q: 生物节律曲线是如何计算的？",
+    "guide.faq1A": "A: 以出生日为起始点，依据23天、28天、33天周期，通过正弦波在+100%（峰值期）与-100%（低潮期）之间规律振荡。",
+    "guide.faq2Q": "Q: 生物节律属于现代临床医学吗？",
+    "guide.faq2A": "A: 否。现代生物钟学专注于视交叉上核控制的24小时昼夜节律，固定终身的正弦波节律则作为身心自省的健康参考。",
+    "guide.faq3Q": "Q: 什么是“临界日（转换期）”？",
+    "guide.faq3A": "A: 指曲线穿过中轴基线（0%）的当天。此时极性正在转换，建议保持从容作息，避免高负荷冲动。",
+    "guide.faq4Q": "Q: 我的出生日期会被记录或上传吗？",
+    "guide.faq4A": "A: 绝不。所有数据均在您的本地浏览器内即时计算，不会传输至任何外部服务器。",
+    "guide.reviewDate": "内容审阅：2026年11月",
+    "guide.reviewTeam": "DopaBrain 时间生物学团队"
+  },
+  "es": {
+    "guide.summaryTitle": "Guía de Biorritmos: Fórmula, Ciclos y Preguntas Frecuentes",
+    "guide.mathRule": "Los biorritmos calculan ondas sinusoidales periódicas según los días transcurridos desde el nacimiento. Los 3 ciclos son Físico (23 días), Emocional (28 días) e Intelectual (33 días), según R(t) = sin(2πt / T).",
+    "guide.boundary": "Esta calculadora es una herramienta de bienestar y autorreflexión. No sustituye diagnósticos médicos ni cronobiológicos.",
+    "guide.cyclesTitle": "Los Tres Ciclos Principales",
+    "guide.physicalCycle": "Ciclo Físico (23 Días):",
+    "guide.physicalDesc": "Rige los niveles de energía, resistencia corporal y recuperación.",
+    "guide.emotionalCycle": "Ciclo Emocional (28 Días):",
+    "guide.emotionalDesc": "Influye en el estado de ánimo, sensibilidad, creatividad y empatía.",
+    "guide.intellectualCycle": "Ciclo Intelectual (33 Días):",
+    "guide.intellectualDesc": "Modela la concentración analítica, memoria y toma de decisiones.",
+    "guide.faqTitle": "Preguntas Frecuentes (FAQ)",
+    "guide.faq1Q": "Q: ¿Cómo se calculan las curvas de biorritmo?",
+    "guide.faq1A": "A: Cada ciclo oscila sinusoidalmente entre +100% (pico positivo) y -100% (fase de recarga), cruzando el eje cero en los puntos medios.",
+    "guide.faq2Q": "Q: ¿Es el biorritmo una ciencia médica clínica?",
+    "guide.faq2A": "A: No. La cronobiología estudia los ritmos circadianos de 24 horas; los biorritmos sinusoidales son un modelo reflexivo de bienestar personal.",
+    "guide.faq3Q": "Q: ¿Qué significa un 'día crítico o de transición'?",
+    "guide.faq3A": "A: Es el día en que la curva cruza la línea base (0%). Representa una transición de polaridad donde conviene moderar el ritmo.",
+    "guide.faq4Q": "Q: ¿Se guarda o transmite mi fecha de nacimiento?",
+    "guide.faq4A": "A: Nunca. Todos los cálculos se efectúan 100% de manera local en su navegador.",
+    "guide.reviewDate": "Revisión Editorial: Noviembre 2026",
+    "guide.reviewTeam": "Equipo de Cronobiología DopaBrain"
+  },
+  "de": {
+    "guide.summaryTitle": "Biorhythmus-Leitfaden: Formel, Zyklen & FAQ",
+    "guide.mathRule": "Biorhythmen berechnen sinusförmige Schwingungen basierend auf den seit der Geburt verstrichenen Tagen: Körperlich (23 Tage), Emotional (28 Tage) und Intellektuell (33 Tage), Formel R(t) = sin(2πt / T).",
+    "guide.boundary": "Dieser Rechner ist ein Bildungswerkzeug zur Selbstreflexion und ersetzt keine ärztliche oder chronobiologische Diagnose.",
+    "guide.cyclesTitle": "Die Drei Hauptzyklen",
+    "guide.physicalCycle": "Körperlicher Zyklus (23 Tage):",
+    "guide.physicalDesc": "Steuert vitale Energie, Ausdauer, Koordination und Regeneration.",
+    "guide.emotionalCycle": "Emotionaler Zyklus (28 Tage):",
+    "guide.emotionalDesc": "Beeinflusst Stimmungslagen, Feingefühl, Kreativität und Empathie.",
+    "guide.intellectualCycle": "Intellektueller Zyklus (33 Tage):",
+    "guide.intellectualDesc": "Bestimmt logische Auffassungsgabe, Konzentration und Urteilsvermögen.",
+    "guide.faqTitle": "Häufig gestellte Fragen (FAQ)",
+    "guide.faq1Q": "Q: Wie werden Biorhythmen berechnet?",
+    "guide.faq1A": "A: Vom Tag der Geburt an oszilliert jeder Zyklus sinusförmig zwischen +100% (Hochphase) und -100% (Regenerationsphase).",
+    "guide.faq2Q": "Q: Ist die Biorhythmik eine klinische Wissenschaft?",
+    "guide.faq2A": "A: Nein. Die moderne Chronobiologie erforscht 24-Stunden-Zirkadianrhythmen; fixe Biorhythmen dienen als reflexives Wohlfühlmodell.",
+    "guide.faq3Q": "Q: Was bedeutet ein 'kritischer Übergangstag'?",
+    "guide.faq3A": "A: Ein Tag, an dem die Sinuskurve die Nullachse kreuzt. Dieser Phasenwechsel empfiehlt Achtsamkeit und Tempomäßigung.",
+    "guide.faq4Q": "Q: Werden meine Geburtsdaten gespeichert?",
+    "guide.faq4A": "A: Niemals. Sämtliche Berechnungen erfolgen rein lokal in Ihrem Browser.",
+    "guide.reviewDate": "Redaktionelle Prüfung: November 2026",
+    "guide.reviewTeam": "DopaBrain Chronobiologie-Team"
+  },
+  "fr": {
+    "guide.summaryTitle": "Guide des Biorythmes : Formule, Cycles & FAQ",
+    "guide.mathRule": "Les biorythmes calculent des ondes sinusoïdales à partir du nombre de jours vécus : Physique (23 jours), Emotionnel (28 jours) et Intellectuel (33 jours) avec R(t) = sin(2πt / T).",
+    "guide.boundary": "Cet outil est conçu pour la réflexion personnelle et le bien-être au quotidien. Il ne constitue pas un diagnostic médical.",
+    "guide.cyclesTitle": "Les Trois Cycles Fondamentaux",
+    "guide.physicalCycle": "Cycle Physique (23 Jours) :",
+    "guide.physicalDesc": "Régule la vitalité corporelle, l'endurance, la coordination et la récupération.",
+    "guide.emotionalCycle": "Cycle Émotionnel (28 Jours) :",
+    "guide.emotionalDesc": "Influence l'humeur, la réceptivité créative, l'intuition et l'empathie.",
+    "guide.intellectualCycle": "Cycle Intellectuel (33 Jours) :",
+    "guide.intellectualDesc": "Guide la clarté analytique, l'attention et la prise de décision logique.",
+    "guide.faqTitle": "Foire Aux Questions (FAQ)",
+    "guide.faq1Q": "Q: Comment les biorythmes sont-ils calculés ?",
+    "guide.faq1A": "A: Les jours écoulés depuis la naissance sont appliqués à la fonction sinus périodique, oscillant entre +100% (apogée) et -100% (phase de repos).",
+    "guide.faq2Q": "Q: Le biorythme est-il une science médicale ?",
+    "guide.faq2A": "A: Non. La chronobiologie médicale étudie les rythmes circadiens de 24 heures; les biorythmes sinusoidaux sont un outil de bien-être introspectif.",
+    "guide.faq3Q": "Q: Qu'est-ce qu'un 'jour critique de transition' ?",
+    "guide.faq3A": "A: C'est le moment où la courbe coupe l'axe médian zéro. Une phase de transition invitant au calme et à la modération.",
+    "guide.faq4Q": "Q: Mes dates personnelles sont-elles conservées ?",
+    "guide.faq4A": "A: Jamais. Tout est calculé en temps réel dans votre navigateur sans communication serveur.",
+    "guide.reviewDate": "Revue Éditoriale : Novembre 2026",
+    "guide.reviewTeam": "Équipe Chronobiologie DopaBrain"
+  },
+  "pt": {
+    "guide.summaryTitle": "Guia de Biorritmos: Fórmula, Ciclos e Perguntas Frequentes",
+    "guide.mathRule": "Biorritmos calculam ondas senoidais baseadas nos dias vividos desde o nascimento: Físico (23 dias), Emocional (28 dias) e Intelectual (33 dias), segundo R(t) = sin(2πt / T).",
+    "guide.boundary": "Esta calculadora é uma ferramenta educativa de bem-estar pessoal e não substitui avaliações médicas especializadas.",
+    "guide.cyclesTitle": "Os Três Ciclos Principais",
+    "guide.physicalCycle": "Ciclo Físico (23 Dias):",
+    "guide.physicalDesc": "Comanda a vitalidade corporal, vigor muscular e recuperação.",
+    "guide.emotionalCycle": "Ciclo Emocional (28 Dias):",
+    "guide.emotionalDesc": "Influencia a estabilidade do humor, criatividade e sensibilidade.",
+    "guide.intellectualCycle": "Ciclo Intelectual (33 Dias):",
+    "guide.intellectualDesc": "Reflete foco de raciocínio, memória e tomadas de decisão.",
+    "guide.faqTitle": "Perguntas Frequentes (FAQ)",
+    "guide.faq1Q": "Q: Como os ciclos de biorritmo são calculados?",
+    "guide.faq1A": "A: Cada ritmo oscila entre +100% (fase ápice) e -100% (fase de repouso) por meio de curvas senoidais periódicas.",
+    "guide.faq2Q": "Q: Biorritmo é ciência médica comprovada?",
+    "guide.faq2A": "A: Não. A cronobiologia estuda ritmos circadianos de 24h; os biorritmos senoidais atuam como modelo lúdico de autorreflexão.",
+    "guide.faq3Q": "Q: O que significa 'dia crítico de transição'?",
+    "guide.faq3A": "A: O dia em que a curva cruza a linha de base (0%). Indica mudança de polaridade onde é sensato desacelerar.",
+    "guide.faq4Q": "Q: A minha data de nascimento é armazenada?",
+    "guide.faq4A": "A: De forma alguma. Os cálculos são 100% locais no navegador sem transmissão a servidores externos.",
+    "guide.reviewDate": "Revisão Editorial: Novembro 2026",
+    "guide.reviewTeam": "Equipe de Cronobiologia DopaBrain"
+  },
+  "id": {
+    "guide.summaryTitle": "Panduan Sains Biorhythm: Rumus, Siklus & FAQ Kronobiologi",
+    "guide.mathRule": "Biorhythm menghitung gelombang sinusoidal berkala berdasarkan jumlah hari sejak lahir: Fisik (23 hari), Emosional (28 hari), dan Intelektual (33 hari) dengan rumus R(t) = sin(2πt / T).",
+    "guide.boundary": "Kalkulator ini merupakan sarana edukasi untuk refleksi diri dan kebugaran, bukan pengganti diagnosis medis klinis.",
+    "guide.cyclesTitle": "Tiga Siklus Utama",
+    "guide.physicalCycle": "Siklus Fisik (23 Hari):",
+    "guide.physicalDesc": "Mengatur energi fisik, stamina tubuh, koordinasi, dan ketahanan lelah.",
+    "guide.emotionalCycle": "Siklus Emosional (28 Hari):",
+    "guide.emotionalDesc": "Memengaruhi suasana hati, intuisi kreatif, empati, dan stabilitas perasaan.",
+    "guide.intellectualCycle": "Siklus Intelektual (33 Hari):",
+    "guide.intellectualDesc": "Memengaruhi penalaran logis, daya ingat, dan konsentrasi analitis.",
+    "guide.faqTitle": "Pertanyaan Umum (FAQ)",
+    "guide.faq1Q": "Q: Bagaimana biorhythm dihitung?",
+    "guide.faq1A": "A: Total hari sejak lahir dibagi ke dalam siklus (23, 28, dan 33 hari) dengan rumus sinusoidal R(t) = sin(2πt / T), berosilasi antara +100% dan -100%.",
+    "guide.faq2Q": "Q: Apakah biorhythm adalah ilmu medis klinis?",
+    "guide.faq2A": "A: Tidak. Kronobiologi modern meneliti ritme sirkadian 24 jam, sedangkan biorhythm sinusoidal tetap menjadi model refleksi gaya hidup yang menyenangkan.",
+    "guide.faq3Q": "Q: Apa yang dimaksud dengan 'hari kritis atau transisi'?",
+    "guide.faq3A": "A: Hari ketika kurva memotong garis tengah (nol). Menandakan pergantian fase di mana disarankan menjaga tempo dan tidak memaksakan diri.",
+    "guide.faq4Q": "Q: Apakah tanggal lahir saya disimpan?",
+    "guide.faq4A": "A: Tidak pernah. Semua perhitungan berlangsung secara lokal di peramban tanpa pengiriman data ke server luar.",
+    "guide.reviewDate": "Tinjauan Redaksi: November 2026",
+    "guide.reviewTeam": "Tim Kronobiologi DopaBrain"
+  },
+  "tr": {
+    "guide.summaryTitle": "Biyoritm Rehberi: Formül, Döngüler & Kronobiyoloji SSS",
+    "guide.mathRule": "Biyoritm, doğumdan bu yana geçen gün sayısına göre sinüzoidal dalgalar hesaplar: Fiziksel (23 gün), Duygusal (28 gün) ve Entelektüel (33 gün) döngüler R(t) = sin(2πt / T) formülüne dayanır.",
+    "guide.boundary": "Bu hesaplayıcı kişisel farkındalık için bir eğitim ve esenlik aracıdır. Tıbbi tanı veya ameliyat takvimi belirleme amacı taşımaz.",
+    "guide.cyclesTitle": "Üç Ana Döngü",
+    "guide.physicalCycle": "Fiziksel Döngü (23 Gün):",
+    "guide.physicalDesc": "Fiziksel canlılık, dayanıklılık, koordinasyon ve vücut direncini etkiler.",
+    "guide.emotionalCycle": "Duygusal Döngü (28 Gün):",
+    "guide.emotionalDesc": "Ruh hali kararlılığı, yaratıcı sezgi ve duygusal esnekliği etkiler.",
+    "guide.intellectualCycle": "Entelektüel Döngü (33 Gün):",
+    "guide.intellectualDesc": "Mantıksal çıkarım, çalışma belleği ve analitik odaklanmayı etkiler.",
+    "guide.faqTitle": "Sıkça Sorulan Sorular (SSS)",
+    "guide.faq1Q": "Q: Biyoritm nasıl hesaplanır?",
+    "guide.faq1A": "A: Doğumdan itibaren geçen gün sayısı her döngüye (23, 28, 33 gün) bölünerek R(t) = sin(2πt / T) formülüyle hesaplanır ve +%100 ile -%100 arasında salınır.",
+    "guide.faq2Q": "Q: Biyoritm tıbbi bir bilim midir?",
+    "guide.faq2A": "A: Hayır. Modern kronobiyoloji 24 saatlik sirkadiyen ritimleri inceler; sabit sinüs döngüleri ise eğlenceli bir öz-farkındalık modelidir.",
+    "guide.faq3Q": "Q: 'Kritik geçiş günü' ne anlama gelir?",
+    "guide.faq3A": "A: Sinüs eğrisinin sıfır çizgisini kestiği gündür. Kutup değişimini gösterir ve bu günlerde temkinli davranılması tavsiye edilir.",
+    "guide.faq4Q": "Q: Doğum tarihim kaydediliyor mu?",
+    "guide.faq4A": "A: Kesinlikle hayır. Tüm hesaplamalar yerel olarak tarayıcınızda gerçekleşir.",
+    "guide.reviewDate": "Editöryal İnceleme: Kasım 2026",
+    "guide.reviewTeam": "DopaBrain Kronobiyoloji Ekibi"
+  },
+  "ru": {
+    "guide.summaryTitle": "Научный гид по биоритмам: формулы, циклы и FAQ по хронобиологии",
+    "guide.mathRule": "Биоритмы рассчитываются как синусоидальные волны от числа прожитых дней: Физический (23 дня), Эмоциональный (28 дней) и Интеллектуальный (33 дня) по формуле R(t) = sin(2πt / T).",
+    "guide.boundary": "Этот калькулятор является образовательным инструментом осознанности и саморегуляции, а не медицинской диагностикой.",
+    "guide.cyclesTitle": "Три главных биоритма",
+    "guide.physicalCycle": "Физический цикл (23 дня):",
+    "guide.physicalDesc": "Определяет жизненный тонус, силу, координацию и устойчивость к нагрузкам.",
+    "guide.emotionalCycle": "Эмоциональный цикл (28 дней):",
+    "guide.emotionalDesc": "Влияет на настроение, интуицию, творческий порыв и эмпатию.",
+    "guide.intellectualCycle": "Интеллектуальный цикл (33 дня):",
+    "guide.intellectualDesc": "Отвечает за логическое мышление, память, аналитику и концентрацию.",
+    "guide.faqTitle": "Часто задаваемые вопросы (FAQ)",
+    "guide.faq1Q": "Q: Как строятся графики биоритмов?",
+    "guide.faq1A": "A: От даты рождения каждый цикл периодически колеблется между +100% (пик активности) и -100% (фаза восстановления).",
+    "guide.faq2Q": "Q: Являются ли биоритмы клинической наукой?",
+    "guide.faq2A": "A: Нет. Хронобиология изучает 24-часовые циркадные ритмы, а синусоидальные биоритмы служат удобной моделью самонаблюдения.",
+    "guide.faq3Q": "Q: Что означает 'критический переходный день'?",
+    "guide.faq3A": "A: День, когда кривая пересекает нулевую линию. Это смена полярности, когда рекомендуется внимательность и спокойный темп.",
+    "guide.faq4Q": "Q: Сохраняется ли моя дата рождения?",
+    "guide.faq4A": "A: Никогда. Все вычисления производятся локально в вашем браузере.",
+    "guide.reviewDate": "Редакционная проверка: ноябрь 2026",
+    "guide.reviewTeam": "Команда хронобиологии DopaBrain"
+  },
+  "hi": {
+    "guide.summaryTitle": "बायोरिदमिक विज्ञान गाइड: सूत्र, चक्र और क्रोनोबायोलॉजी FAQ",
+    "guide.mathRule": "बायोरिदम जन्म से बीते दिनों की संख्या के आधार पर साइन वेव सूत्र R(t) = sin(2πt / T) से गिने जाते हैं: शारीरिक (23 दिन), भावनात्मक (28 दिन), और बौद्धिक (33 दिन)।",
+    "guide.boundary": "यह कैलकुलेटर आत्म-जागरूकता और स्वास्थ्य संतुलन के लिए एक शैक्षिक उपकरण है, कोई नैदानिक ​​चिकित्सा सलाह नहीं।",
+    "guide.cyclesTitle": "तीन प्राथमिक चक्र",
+    "guide.physicalCycle": "शारीरिक चक्र (23 दिन):",
+    "guide.physicalDesc": "शारीरिक ऊर्जा, सहनशक्ति, समन्वय और थकान प्रतिरोध को नियंत्रित करता है।",
+    "guide.emotionalCycle": "भावनात्मक चक्र (28 दिन):",
+    "guide.emotionalDesc": "मनोदशा, संवेदनशीलता, रचनात्मक अंतर्ज्ञान और सहानुभूति को प्रभावित करता है।",
+    "guide.intellectualCycle": "बौद्धिक चक्र (33 दिन):",
+    "guide.intellectualDesc": "तार्किक सोच, कामकाजी स्मृति और विश्लेषणात्मक एकाग्रता को आकार देता है।",
+    "guide.faqTitle": "अक्सर पूछे जाने वाले प्रश्न (FAQ)",
+    "guide.faq1Q": "Q: बायोरिदम कैसे परिकलित किए जाते हैं?",
+    "guide.faq1A": "A: जन्म के दिन से शुरू होकर, चक्र साइन फॉर्मूले से +100% (चरम) और -100% (पुनर्प्राप्ति) के बीच दोलन करते हैं।",
+    "guide.faq2Q": "Q: क्या बायोरिदम एक चिकित्सकीय विज्ञान है?",
+    "guide.faq2A": "A: नहीं। आधुनिक चिकित्सा 24 घंटे के सर्केडियन रिदम का अध्ययन करती है, जबकि यह एक मजेदार आत्म-चिंतन ढांचा है।",
+    "guide.faq3Q": "Q: 'महत्वपूर्ण संक्रमण दिवस' का क्या अर्थ है?",
+    "guide.faq3A": "A: जिस दिन वक्र शून्य-अक्ष को पार करता है। यह ध्रुवता बदलाव का दिन है जब गति को धीमा रखने की सलाह दी जाती है।",
+    "guide.faq4Q": "Q: क्या मेरी जन्मतिथि कहीं सहेजी जाती है?",
+    "guide.faq4A": "A: कभी नहीं। सभी गणनाएँ आपके ब्राउज़र में पूरी तरह से स्थानीय रूप से होती हैं।",
+    "guide.reviewDate": "संपादकीय समीक्षा: नवंबर 2026",
+    "guide.reviewTeam": "डोपाब्रेन क्रोनोबायोलॉजी टीम"
+  }
+};
+  for (const [lang, dict] of Object.entries(guideData)) {
+    if (LANG[lang]) {
+      Object.assign(LANG[lang], dict);
+    }
+  }
+})();
+
 
 const urlLang = new URLSearchParams(window.location.search || '').get('lang');
 let currentLang = (urlLang && LANG[urlLang]) ? urlLang : (localStorage.getItem('bio-lang') || (navigator.language||'en').slice(0,2));
