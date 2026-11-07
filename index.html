@@ -574,10 +574,8 @@ function preserveLanguageLinks(){
     if(!rawHref) return;
     try {
       var url = new URL(rawHref, window.location.origin);
-      if(lang && lang !== 'en'){
+      if(lang){
         url.searchParams.set('lang', lang);
-      } else {
-        url.searchParams.delete('lang');
       }
       url.searchParams.set('source', 'biorhythm_result');
       card.href = url.pathname + url.search;
