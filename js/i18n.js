@@ -29,6 +29,10 @@ class I18n {
         }
     }
     t(key, defaultValue = '') {
+        if (this.translations && Object.prototype.hasOwnProperty.call(this.translations, key)) {
+            const direct = this.translations[key];
+            if (direct) return direct;
+        }
         const keys = key.split('.');
         let value = this.translations;
         for (const k of keys) {

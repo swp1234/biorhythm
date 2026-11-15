@@ -62,5 +62,28 @@
   "curated.walkerTitle": "Por qué dormimos — Matthew Walker",
   "curated.walkerDesc": "Ciencia esencial sobre los ritmos circadianos, el sueño reparador y la claridad mental.",
   "curated.pinkTitle": "Cuándo (When) — Daniel H. Pink",
-  "curated.pinkDesc": "Estrategias basadas en datos para alinear enfoque, creatividad y pausas con tu energía."
+  "curated.pinkDesc": "Estrategias basadas en datos para alinear enfoque, creatividad y pausas con tu energía.",
+  "guide": {
+    "summaryTitle": "Sobre los biorritmos: fórmula, ciclos y preguntas frecuentes",
+    "mathRule": "Los biorritmos calculan ondas sinusoidales según los días transcurridos desde el nacimiento: Físico (23 días), Emocional (28 días) e Intelectual (33 días), con R(t) = sin(2πt / T).",
+    "boundary": "Esta herramienta es solo para autorreflexión y seguimiento personal; no ofrece diagnósticos médicos.",
+    "cyclesTitle": "Los tres ciclos principales",
+    "physicalCycle": "Ciclo Físico (23 días):",
+    "physicalDesc": "Governs energy levels, physical stamina, coordination, and resistance to fatigue.",
+    "emotionalCycle": "Ciclo Emocional (28 días):",
+    "emotionalDesc": "Influences mood swings, nervous system sensitivity, creativity, and empathy.",
+    "intellectualCycle": "Ciclo Intelectual (33 días):",
+    "intellectualDesc": "Shapes analytical thinking, mental alertness, memory recall, and logical decision-making.",
+    "faqTitle": "Preguntas frecuentes",
+    "faq1Q": "Q: How are biorhythm curves calculated?",
+    "faq1A": "A: Each rhythm starts at birth (day 0) and cycles sinusoidally between +100% (peak vitality) and -100% (restoration phase), crossing zero at half-cycles.",
+    "faq2Q": "Q: Is biorhythm theory medical science?",
+    "faq2A": "A: No. While modern medicine studies circadian rhythms (24h internal clocks governed by the SCN), fixed lifetime biorhythms serve as a fun reflective journaling framework.",
+    "faq3Q": "Q: What does a 'critical transition day' mean?",
+    "faq3A": "A: Critical days occur when a curve crosses the baseline (0%). They signify transitional shifts where mindfulness and pacing yourself are encouraged.",
+    "faq4Q": "Q: Is my birth date saved or transmitted anywhere?",
+    "faq4A": "A: No. All calculations happen entirely in your local browser sandbox. No personal dates are stored or sent to remote servers.",
+    "reviewDate": "Revisión editorial: noviembre de 2026",
+    "reviewTeam": "DopaBrain Chronobiology Team"
+  }
 }

@@ -62,5 +62,28 @@
   "curated.walkerTitle": "Por que nós dormimos — Matthew Walker",
   "curated.walkerDesc": "Ciência essencial sobre ritmos circadianos, recuperação e clareza cognitiva.",
   "curated.pinkTitle": "Quando (When) — Daniel H. Pink",
-  "curated.pinkDesc": "Estratégias baseadas em evidências para alinhar foco, criatividade e descanso."
+  "curated.pinkDesc": "Estratégias baseadas em evidências para alinhar foco, criatividade e descanso.",
+  "guide": {
+    "summaryTitle": "Sobre os biorritmos: fórmula, ciclos e perguntas frequentes",
+    "mathRule": "Os biorritmos calculam ondas senoidais com base nos dias desde o nascimento: Físico (23 dias), Emocional (28 dias) e Intelectual (33 dias), usando R(t) = sin(2πt / T).",
+    "boundary": "Esta ferramenta destina-se à autorreflexão e acompanhamento pessoal; não fornece diagnósticos médicos.",
+    "cyclesTitle": "Os três ciclos principais",
+    "physicalCycle": "Ciclo Físico (23 dias):",
+    "physicalDesc": "Governs energy levels, physical stamina, coordination, and resistance to fatigue.",
+    "emotionalCycle": "Ciclo Emocional (28 dias):",
+    "emotionalDesc": "Influences mood swings, nervous system sensitivity, creativity, and empathy.",
+    "intellectualCycle": "Ciclo Intelectual (33 dias):",
+    "intellectualDesc": "Shapes analytical thinking, mental alertness, memory recall, and logical decision-making.",
+    "faqTitle": "Perguntas frequentes",
+    "faq1Q": "Q: How are biorhythm curves calculated?",
+    "faq1A": "A: Each rhythm starts at birth (day 0) and cycles sinusoidally between +100% (peak vitality) and -100% (restoration phase), crossing zero at half-cycles.",
+    "faq2Q": "Q: Is biorhythm theory medical science?",
+    "faq2A": "A: No. While modern medicine studies circadian rhythms (24h internal clocks governed by the SCN), fixed lifetime biorhythms serve as a fun reflective journaling framework.",
+    "faq3Q": "Q: What does a 'critical transition day' mean?",
+    "faq3A": "A: Critical days occur when a curve crosses the baseline (0%). They signify transitional shifts where mindfulness and pacing yourself are encouraged.",
+    "faq4Q": "Q: Is my birth date saved or transmitted anywhere?",
+    "faq4A": "A: No. All calculations happen entirely in your local browser sandbox. No personal dates are stored or sent to remote servers.",
+    "reviewDate": "Revisão editorial: novembro de 2026",
+    "reviewTeam": "DopaBrain Chronobiology Team"
+  }
 }

@@ -62,5 +62,28 @@
   "curated.walkerTitle": "व्हाई वी स्लीप — मैथ्यू वॉकर",
   "curated.walkerDesc": "सर्कैडियन रिदम, गहरी नींद और मानसिक ऊर्जा पर आधारित महत्वपूर्ण विज्ञान पुस्तक।",
   "curated.pinkTitle": "व्हेन (When) — डैनियल एच. पिंक",
-  "curated.pinkDesc": "गहन एकाग्रता, रचनात्मकता और विश्राम के सर्वोत्तम समय को चुनने की शोध-आधारित रणनीतियाँ।"
+  "curated.pinkDesc": "गहन एकाग्रता, रचनात्मकता और विश्राम के सर्वोत्तम समय को चुनने की शोध-आधारित रणनीतियाँ।",
+  "guide": {
+    "summaryTitle": "बायोरिदम के बारे में: सूत्र, चक्र और अक्सर पूछे जाने वाले प्रश्न",
+    "mathRule": "Biorhythms calculate periodic sinusoidal waves based on the exact number of elapsed days since birth. The three primary cycles are Physical (23 days), Emotional (28 days), and Intellectual (33 days), modeled by the formula R(t) = sin(2πt / T).",
+    "boundary": "This calculator is an educational self-reflection and wellness tracking tool. It does not provide medical diagnoses or replace clinical chronobiology evaluations.",
+    "cyclesTitle": "तीन प्रमुख चक्र",
+    "physicalCycle": "शारीरिक चक्र (23 दिन):",
+    "physicalDesc": "Governs energy levels, physical stamina, coordination, and resistance to fatigue.",
+    "emotionalCycle": "भावनात्मक चक्र (28 दिन):",
+    "emotionalDesc": "Influences mood swings, nervous system sensitivity, creativity, and empathy.",
+    "intellectualCycle": "बौद्धिक चक्र (33 दिन):",
+    "intellectualDesc": "Shapes analytical thinking, mental alertness, memory recall, and logical decision-making.",
+    "faqTitle": "अक्सर पूछे जाने वाले प्रश्न",
+    "faq1Q": "Q: How are biorhythm curves calculated?",
+    "faq1A": "A: Each rhythm starts at birth (day 0) and cycles sinusoidally between +100% (peak vitality) and -100% (restoration phase), crossing zero at half-cycles.",
+    "faq2Q": "Q: Is biorhythm theory medical science?",
+    "faq2A": "A: No. While modern medicine studies circadian rhythms (24h internal clocks governed by the SCN), fixed lifetime biorhythms serve as a fun reflective journaling framework.",
+    "faq3Q": "Q: What does a 'critical transition day' mean?",
+    "faq3A": "A: Critical days occur when a curve crosses the baseline (0%). They signify transitional shifts where mindfulness and pacing yourself are encouraged.",
+    "faq4Q": "Q: Is my birth date saved or transmitted anywhere?",
+    "faq4A": "A: No. All calculations happen entirely in your local browser sandbox. No personal dates are stored or sent to remote servers.",
+    "reviewDate": "संपादकीय समीक्षा: नवंबर 2026",
+    "reviewTeam": "DopaBrain Chronobiology Team"
+  }
 }
