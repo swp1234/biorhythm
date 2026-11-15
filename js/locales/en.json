@@ -52,5 +52,15 @@
     "stressCheck": "Stress Check",
     "luckMeter": "Luck Meter",
     "dreamFortune": "Dream Fortune"
-  }
+  },
+  "share.saveCard": "Save Story Card",
+  "share.saved": "Story card saved (1080×1920)!",
+  "curated.title": "Recommended Chronobiology & Timing Books",
+  "curated.disclosure": "Affiliate links",
+  "curated.subtitle": "Pair your daily cycle chart with evidence-backed guides on sleep, energy, and peak timing.",
+  "curated.cta": "View Book ->",
+  "curated.walkerTitle": "Why We Sleep — Matthew Walker",
+  "curated.walkerDesc": "Landmark science on circadian rhythms, restorative sleep stages, and cognitive energy.",
+  "curated.pinkTitle": "When: The Scientific Secrets of Perfect Timing — Daniel H. Pink",
+  "curated.pinkDesc": "Research-backed strategies for scheduling deep focus, creative peaks, and recovery breaks."
 }

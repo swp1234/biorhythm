@@ -39,7 +39,7 @@
   "compatScore": "Pontuação",
   "accessibility.skipToMain": "Pular para o conteúdo principal",
   "share.twitter": "Twitter",
-  "share.copyUrl": "📋 Copiar URL",
+  "share.copyUrl": "📋 Copiar link",
   "share.copied": "✅ Copiado!",
   "biorhythm.noCriticalDays": "✨ Sem transições críticas neste período.",
   "biorhythm": {
@@ -52,5 +52,15 @@
     "stressCheck": "Teste de estresse",
     "luckMeter": "Medidor de sorte",
     "dreamFortune": "Sonhos e Sorte"
-  }
+  },
+  "share.saveCard": "Salvar card (Story)",
+  "share.saved": "Card salvo (1080×1920)!",
+  "curated.title": "Livros recomendados de cronobiologia e ritmo",
+  "curated.disclosure": "Links de afiliado",
+  "curated.subtitle": "Combine seu gráfico diário com guias científicos sobre sono, energia e foco.",
+  "curated.cta": "Ver livro ->",
+  "curated.walkerTitle": "Por que nós dormimos — Matthew Walker",
+  "curated.walkerDesc": "Ciência essencial sobre ritmos circadianos, recuperação e clareza cognitiva.",
+  "curated.pinkTitle": "Quando (When) — Daniel H. Pink",
+  "curated.pinkDesc": "Estratégias baseadas em evidências para alinhar foco, criatividade e descanso."
 }

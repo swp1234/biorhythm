@@ -39,8 +39,8 @@
   "compatScore": "Score",
   "accessibility.skipToMain": "Aller au contenu principal",
   "share.twitter": "Twitter",
-  "share.copyUrl": "📋 Copier URL",
-  "share.copied": "✅ Copié!",
+  "share.copyUrl": "📋 Copier le lien",
+  "share.copied": "✅ Copié !",
   "biorhythm.noCriticalDays": "✨ Pas de transitions critiques dans cette période.",
   "biorhythm": {
     "noCriticalDays": "✨ Pas de jours critiques dans cette période."
@@ -52,5 +52,15 @@
     "stressCheck": "Test de stress",
     "luckMeter": "Compteur de chance",
     "dreamFortune": "Rêves & Fortune"
-  }
+  },
+  "share.saveCard": "Enregistrer la carte",
+  "share.saved": "Carte enregistrée (1080×1920) !",
+  "curated.title": "Livres recommandés sur les rythmes et le timing",
+  "curated.disclosure": "Liens affiliés",
+  "curated.subtitle": "Associez votre courbe du jour à des guides scientifiques sur le sommeil et la vitalité.",
+  "curated.cta": "Voir le livre ->",
+  "curated.walkerTitle": "Pourquoi nous dormons — Matthew Walker",
+  "curated.walkerDesc": "L’ouvrage de référence sur l’horloge biologique, le sommeil réparateur et l’énergie.",
+  "curated.pinkTitle": "Le Pouvoir du moment (When) — Daniel H. Pink",
+  "curated.pinkDesc": "Méthodes scientifiques pour planifier concentration, créativité et récupération."
 }

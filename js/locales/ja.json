@@ -40,7 +40,7 @@
   "accessibility.skipToMain": "メインコンテンツへスキップ",
   "share.twitter": "Twitter",
   "share.copyUrl": "📋 URLコピー",
-  "share.copied": "✅ コピー済み!",
+  "share.copied": "✅ コピーしました!",
   "biorhythm.noCriticalDays": "✨ この期間に重要な転換点はありません。",
   "biorhythm": {
     "noCriticalDays": "✨ この期間に転換期はありません。"
@@ -52,5 +52,15 @@
     "stressCheck": "ストレスチェック",
     "luckMeter": "運勢メーター",
     "dreamFortune": "夢占い＆運勢"
-  }
+  },
+  "share.saveCard": "ストーリーカードを保存",
+  "share.saved": "ストーリーカードを保存しました (1080×1920)!",
+  "curated.title": "時間生物学・バイオリズムおすすめ書籍",
+  "curated.disclosure": "アフィリエイトリンク",
+  "curated.subtitle": "今日の3つのリズム波形とあわせて、睡眠と最適なタイミングの科学ガイドをチェック。",
+  "curated.cta": "詳細を見る ->",
+  "curated.walkerTitle": "睡眠こそ最強の解決策である — マシュー・ウォーカー",
+  "curated.walkerDesc": "概日リズム、回復睡眠、認知パフォーマンスを解き明かす睡眠科学の決定版。",
+  "curated.pinkTitle": "WHEN 完璧なタイミングを科学する — ダニエル・ピンク",
+  "curated.pinkDesc": "集中力・創造性・休息の黄金タイムを統計と実験で導き出すタイミング術。"
 }

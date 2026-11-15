@@ -39,8 +39,8 @@
   "compatScore": "Skor",
   "accessibility.skipToMain": "Lewati ke konten utama",
   "share.twitter": "Twitter",
-  "share.copyUrl": "📋 Salin URL",
-  "share.copied": "✅ Disalin!",
+  "share.copyUrl": "📋 Salin Tautan",
+  "share.copied": "✅ Tersalin!",
   "biorhythm.noCriticalDays": "✨ Tidak ada transisi kritis dalam periode ini.",
   "biorhythm": {
     "noCriticalDays": "✨ Tidak ada hari kritis dalam periode ini."
@@ -52,5 +52,15 @@
     "stressCheck": "Cek stres",
     "luckMeter": "Pengukur keberuntungan",
     "dreamFortune": "Tafsir Mimpi"
-  }
+  },
+  "share.saveCard": "Simpan Kartu Story",
+  "share.saved": "Kartu story tersimpan (1080×1920)!",
+  "curated.title": "Buku Rekomendasi Kronobiologi & Energi",
+  "curated.disclosure": "Tautan afiliasi",
+  "curated.subtitle": "Padukan grafik ritme harian Anda dengan panduan ilmiah tentang tidur dan waktu puncak.",
+  "curated.cta": "Lihat Buku ->",
+  "curated.walkerTitle": "Why We Sleep — Matthew Walker",
+  "curated.walkerDesc": "Riset penting tentang ritme sirkadian, tidur berkualitas, dan pemulihan energi.",
+  "curated.pinkTitle": "When — Daniel H. Pink",
+  "curated.pinkDesc": "Strategi berbasis riset untuk mengatur waktu fokus, kreativitas, dan istirahat."
 }

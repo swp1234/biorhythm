@@ -38,7 +38,7 @@
   "compatTitle": "配对结果",
   "compatScore": "配对分数",
   "accessibility.skipToMain": "跳到主要内容",
-  "share.twitter": "推特",
+  "share.twitter": "Twitter",
   "share.copyUrl": "📋 复制链接",
   "share.copied": "✅ 已复制!",
   "biorhythm.noCriticalDays": "✨ 此期间没有关键转变。",
@@ -52,5 +52,15 @@
     "stressCheck": "压力检测",
     "luckMeter": "幸运测量",
     "dreamFortune": "解梦与运势"
-  }
+  },
+  "share.saveCard": "保存故事卡片",
+  "share.saved": "故事卡片已保存 (1080×1920)！",
+  "curated.title": "时间生物学与节律推荐书单",
+  "curated.disclosure": "联盟推广链接",
+  "curated.subtitle": "结合今日生物节律曲线，深入了解睡眠节律与高效时间管理科学。",
+  "curated.cta": "查看图书 ->",
+  "curated.walkerTitle": "我们为什么要睡觉 — 马修·沃克",
+  "curated.walkerDesc": "深入解析昼夜节律、深度睡眠修复与日常精力周期的睡眠科学经典。",
+  "curated.pinkTitle": "时机科学 (When) — 丹尼尔·平克",
+  "curated.pinkDesc": "基于心理学与时间生物学研究，找到专注、创作与休息的最佳时机。"
 }

@@ -39,7 +39,7 @@
   "compatScore": "Puan",
   "accessibility.skipToMain": "Ana içeriğe geç",
   "share.twitter": "Twitter",
-  "share.copyUrl": "📋 URL Kopyala",
+  "share.copyUrl": "📋 Bağlantıyı Kopyala",
   "share.copied": "✅ Kopyalandı!",
   "biorhythm.noCriticalDays": "✨ Bu dönemde kritik geçiş yok.",
   "biorhythm": {
@@ -52,5 +52,15 @@
     "stressCheck": "Stres testi",
     "luckMeter": "Şans ölçer",
     "dreamFortune": "Rüya Yorumu"
-  }
+  },
+  "share.saveCard": "Hikaye Kartını Kaydet",
+  "share.saved": "Hikaye kartı kaydedildi (1080×1920)!",
+  "curated.title": "Önerilen Kronobiyoloji ve Zamanlama Kitapları",
+  "curated.disclosure": "Satış ortaklığı bağlantıları",
+  "curated.subtitle": "Günlük ritim grafiğinizi uyku, enerji ve en verimli zamanlama bilimiyle destekleyin.",
+  "curated.cta": "Kitabı İncele ->",
+  "curated.walkerTitle": "Niçin Uyuruz — Matthew Walker",
+  "curated.walkerDesc": "Sirkadiyen ritimler, yenileyici uyku ve zihinsel performans üzerine temel bilim rehberi.",
+  "curated.pinkTitle": "Ne Zaman (When) — Daniel H. Pink",
+  "curated.pinkDesc": "Odaklanma, yaratıcılık ve dinlenme dönemlerini doğru planlamak için kanıta dayalı yöntemler."
 }

@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0a0a1a">
 <title>Biorhythm Calculator — Know Your Peak Days Free</title>
 <meta name="description" content="Enter your birthday and instantly see today's physical, emotional & intellectual biorhythm. Free calculator with beautiful charts — find your best days now!">
-    <meta name="dateModified" content="2026-11-07">
+    <meta name="dateModified" content="2026-11-15">
 <meta name="keywords" content="바이오리듬, biorhythm, 운세, 건강리듬, 신체리듬, 감성리듬, 지성리듬, 바이오리듬 계산기">
 <link rel="canonical" href="https://dopabrain.com/biorhythm/">
 
@@ -340,6 +340,24 @@ body{
 .share-url{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15)}
 [data-theme="light"] .share-url{background:rgba(0,0,0,0.05);color:#333;border-color:rgba(0,0,0,0.1)}
 .share-btn:hover{transform:translateY(-1px)}
+.share-story{background:linear-gradient(135deg,#6c5ce7,#00b8d9);color:#fff}
+.share-story:hover{filter:brightness(1.08)}
+.curated-resources-card{width:100%;max-width:540px;margin:0 auto 24px;padding:16px 18px;border-radius:16px;background:var(--surface);border:1px solid var(--surface-border);box-sizing:border-box;text-align:left}
+.curated-resources-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.curated-resources-title{margin:0;font-size:15px;font-weight:700;color:var(--text)}
+.curated-disclosure{font-size:11px;color:var(--text2);opacity:0.85;white-space:nowrap}
+.curated-resources-subtitle{margin:0 0 12px;font-size:12px;line-height:1.5;color:var(--text2)}
+.curated-list{display:flex;flex-direction:column;gap:10px}
+.curated-item{display:flex;flex-direction:column;gap:4px;min-height:44px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-decoration:none;color:var(--text);box-sizing:border-box;touch-action:manipulation;transition:border-color .2s,transform .2s}
+.curated-item:hover{border-color:var(--accent);transform:translateY(-1px)}
+[data-theme="light"] .curated-item{background:rgba(0,0,0,0.03);border-color:rgba(0,0,0,0.08)}
+.curated-item-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.curated-item-title{font-size:13px;font-weight:700;color:var(--text)}
+.curated-item-cta{font-size:12px;font-weight:600;color:var(--accent2);white-space:nowrap}
+.curated-item-desc{font-size:12px;line-height:1.5;color:var(--text2)}
+.bio-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(16px);background:rgba(20,22,40,0.96);color:#fff;border:1px solid rgba(108,92,231,0.5);padding:10px 18px;border-radius:999px;font-size:13px;font-weight:600;z-index:9999;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-width:90vw;text-align:center}
+.bio-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (prefers-reduced-motion:reduce){.bio-toast,.curated-item,.share-btn{transition:none}}
 
 /* Ad Banner */
 .ad-slot{
@@ -530,6 +548,9 @@ body{
   <div class="share-section" id="shareSection">
     <button class="btn-share" id="btnShare">📤 <span data-i18n="share">결과 공유</span></button>
     <div class="share-buttons" id="share-section" style="display:none">
+        <button class="share-btn share-story" id="saveCardBtn" aria-label="Save Story Card">
+            <span>📸</span> <span data-i18n="share.saveCard">Save Story Card</span>
+        </button>
         <button class="share-btn share-twitter" id="shareTwitterBtn" aria-label="Share on Twitter">
             <span>𝕏</span> <span data-i18n="share.twitter">Twitter</span>
         </button>
@@ -537,7 +558,11 @@ body{
             <span data-i18n="share.copyUrl">📋 Copy URL</span>
         </button>
     </div>
+    <canvas id="shareCanvas" width="1080" height="1920" style="display:none;"></canvas>
   </div>
+
+  <!-- Curated Books -->
+  <div class="curated-resources-card" id="curated-resources-card" style="display:none;"></div>
 
 
   <!-- Footer -->
@@ -927,7 +952,194 @@ const LANG = {
     "guide.reviewTeam": "डोपाब्रेन क्रोनोबायोलॉजी टीम"
   }
 };
+  const extraData = {
+  "en": {
+    "share.saveCard": "Save Story Card",
+    "share.saved": "Story card saved (1080×1920)!",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 Copy URL",
+    "share.copied": "✅ Copied!",
+    "curated.title": "Recommended Chronobiology & Timing Books",
+    "curated.disclosure": "Affiliate links",
+    "curated.subtitle": "Pair your daily cycle chart with evidence-backed guides on sleep, energy, and peak timing.",
+    "curated.cta": "View Book ->",
+    "curated.walkerTitle": "Why We Sleep — Matthew Walker",
+    "curated.walkerDesc": "Landmark science on circadian rhythms, restorative sleep stages, and cognitive energy.",
+    "curated.pinkTitle": "When: The Scientific Secrets of Perfect Timing — Daniel H. Pink",
+    "curated.pinkDesc": "Research-backed strategies for scheduling deep focus, creative peaks, and recovery breaks."
+  },
+  "ko": {
+    "share.saveCard": "스토리 카드 저장",
+    "share.saved": "스토리 카드가 저장되었습니다 (1080×1920)!",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 URL 복사",
+    "share.copied": "✅ 복사 완료!",
+    "curated.title": "크로노바이올로지 & 생체리듬 추천 도서",
+    "curated.disclosure": "제휴 링크",
+    "curated.subtitle": "오늘의 신체·감성·지성 주기 그래프와 함께 수면 및 시간 관리 과학 가이드를 확인하세요.",
+    "curated.cta": "책 보기 ->",
+    "curated.walkerTitle": "우리는 왜 잠을 자야 할까 — 매튜 워커",
+    "curated.walkerDesc": "일주기 리듬, 깊은 수면 회복, 두뇌 컨디션의 뇌과학적 원리를 다룬 필독서.",
+    "curated.pinkTitle": "언제 할 것인가 (When) — 다니엘 핑크",
+    "curated.pinkDesc": "집중력·창의력·회복이 최고조에 달하는 최적의 타이밍을 과학적으로 설계하는 전략서."
+  },
+  "ja": {
+    "share.saveCard": "ストーリーカードを保存",
+    "share.saved": "ストーリーカードを保存しました (1080×1920)!",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 URLコピー",
+    "share.copied": "✅ コピーしました!",
+    "curated.title": "時間生物学・バイオリズムおすすめ書籍",
+    "curated.disclosure": "アフィリエイトリンク",
+    "curated.subtitle": "今日の3つのリズム波形とあわせて、睡眠と最適なタイミングの科学ガイドをチェック。",
+    "curated.cta": "詳細を見る ->",
+    "curated.walkerTitle": "睡眠こそ最強の解決策である — マシュー・ウォーカー",
+    "curated.walkerDesc": "概日リズム、回復睡眠、認知パフォーマンスを解き明かす睡眠科学の決定版。",
+    "curated.pinkTitle": "WHEN 完璧なタイミングを科学する — ダニエル・ピンク",
+    "curated.pinkDesc": "集中力・創造性・休息の黄金タイムを統計と実験で導き出すタイミング術。"
+  },
+  "zh": {
+    "share.saveCard": "保存故事卡片",
+    "share.saved": "故事卡片已保存 (1080×1920)！",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 复制链接",
+    "share.copied": "✅ 已复制!",
+    "curated.title": "时间生物学与节律推荐书单",
+    "curated.disclosure": "联盟推广链接",
+    "curated.subtitle": "结合今日生物节律曲线，深入了解睡眠节律与高效时间管理科学。",
+    "curated.cta": "查看图书 ->",
+    "curated.walkerTitle": "我们为什么要睡觉 — 马修·沃克",
+    "curated.walkerDesc": "深入解析昼夜节律、深度睡眠修复与日常精力周期的睡眠科学经典。",
+    "curated.pinkTitle": "时机科学 (When) — 丹尼尔·平克",
+    "curated.pinkDesc": "基于心理学与时间生物学研究，找到专注、创作与休息的最佳时机。"
+  },
+  "es": {
+    "share.saveCard": "Guardar tarjeta",
+    "share.saved": "¡Tarjeta guardada (1080×1920)!",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 Copiar enlace",
+    "share.copied": "✅ ¡Copiado!",
+    "curated.title": "Libros recomendados de cronobiología y ritmo",
+    "curated.disclosure": "Enlaces de afiliado",
+    "curated.subtitle": "Combina tu gráfico diario con guías científicas sobre sueño, energía y momentos óptimos.",
+    "curated.cta": "Ver libro ->",
+    "curated.walkerTitle": "Por qué dormimos — Matthew Walker",
+    "curated.walkerDesc": "Ciencia esencial sobre los ritmos circadianos, el sueño reparador y la claridad mental.",
+    "curated.pinkTitle": "Cuándo (When) — Daniel H. Pink",
+    "curated.pinkDesc": "Estrategias basadas en datos para alinear enfoque, creatividad y pausas con tu energía."
+  },
+  "de": {
+    "share.saveCard": "Story-Karte speichern",
+    "share.saved": "Story-Karte gespeichert (1080×1920)!",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 Link kopieren",
+    "share.copied": "✅ Kopiert!",
+    "curated.title": "Empfohlene Bücher zu Chronobiologie & Timing",
+    "curated.disclosure": "Affiliate-Links",
+    "curated.subtitle": "Kombiniere deine Tageskurve mit fundierten Leitfäden zu Schlaf, Energie und Leistungsspitzen.",
+    "curated.cta": "Buch ansehen ->",
+    "curated.walkerTitle": "Das große Buch vom Schlaf — Matthew Walker",
+    "curated.walkerDesc": "Führende Forschung zu zirkadianen Rhythmen, Erholung und geistiger Leistungsfähigkeit.",
+    "curated.pinkTitle": "When: Die Wissenschaft des perfekten Timings — Daniel H. Pink",
+    "curated.pinkDesc": "Praxisnahe Erkenntnisse für Fokusphasen, kreative Hochs und bewusste Pausen."
+  },
+  "fr": {
+    "share.saveCard": "Enregistrer la carte",
+    "share.saved": "Carte enregistrée (1080×1920) !",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 Copier le lien",
+    "share.copied": "✅ Copié !",
+    "curated.title": "Livres recommandés sur les rythmes et le timing",
+    "curated.disclosure": "Liens affiliés",
+    "curated.subtitle": "Associez votre courbe du jour à des guides scientifiques sur le sommeil et la vitalité.",
+    "curated.cta": "Voir le livre ->",
+    "curated.walkerTitle": "Pourquoi nous dormons — Matthew Walker",
+    "curated.walkerDesc": "L’ouvrage de référence sur l’horloge biologique, le sommeil réparateur et l’énergie.",
+    "curated.pinkTitle": "Le Pouvoir du moment (When) — Daniel H. Pink",
+    "curated.pinkDesc": "Méthodes scientifiques pour planifier concentration, créativité et récupération."
+  },
+  "pt": {
+    "share.saveCard": "Salvar card (Story)",
+    "share.saved": "Card salvo (1080×1920)!",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 Copiar link",
+    "share.copied": "✅ Copiado!",
+    "curated.title": "Livros recomendados de cronobiologia e ritmo",
+    "curated.disclosure": "Links de afiliado",
+    "curated.subtitle": "Combine seu gráfico diário com guias científicos sobre sono, energia e foco.",
+    "curated.cta": "Ver livro ->",
+    "curated.walkerTitle": "Por que nós dormimos — Matthew Walker",
+    "curated.walkerDesc": "Ciência essencial sobre ritmos circadianos, recuperação e clareza cognitiva.",
+    "curated.pinkTitle": "Quando (When) — Daniel H. Pink",
+    "curated.pinkDesc": "Estratégias baseadas em evidências para alinhar foco, criatividade e descanso."
+  },
+  "id": {
+    "share.saveCard": "Simpan Kartu Story",
+    "share.saved": "Kartu story tersimpan (1080×1920)!",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 Salin Tautan",
+    "share.copied": "✅ Tersalin!",
+    "curated.title": "Buku Rekomendasi Kronobiologi & Energi",
+    "curated.disclosure": "Tautan afiliasi",
+    "curated.subtitle": "Padukan grafik ritme harian Anda dengan panduan ilmiah tentang tidur dan waktu puncak.",
+    "curated.cta": "Lihat Buku ->",
+    "curated.walkerTitle": "Why We Sleep — Matthew Walker",
+    "curated.walkerDesc": "Riset penting tentang ritme sirkadian, tidur berkualitas, dan pemulihan energi.",
+    "curated.pinkTitle": "When — Daniel H. Pink",
+    "curated.pinkDesc": "Strategi berbasis riset untuk mengatur waktu fokus, kreativitas, dan istirahat."
+  },
+  "tr": {
+    "share.saveCard": "Hikaye Kartını Kaydet",
+    "share.saved": "Hikaye kartı kaydedildi (1080×1920)!",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 Bağlantıyı Kopyala",
+    "share.copied": "✅ Kopyalandı!",
+    "curated.title": "Önerilen Kronobiyoloji ve Zamanlama Kitapları",
+    "curated.disclosure": "Satış ortaklığı bağlantıları",
+    "curated.subtitle": "Günlük ritim grafiğinizi uyku, enerji ve en verimli zamanlama bilimiyle destekleyin.",
+    "curated.cta": "Kitabı İncele ->",
+    "curated.walkerTitle": "Niçin Uyuruz — Matthew Walker",
+    "curated.walkerDesc": "Sirkadiyen ritimler, yenileyici uyku ve zihinsel performans üzerine temel bilim rehberi.",
+    "curated.pinkTitle": "Ne Zaman (When) — Daniel H. Pink",
+    "curated.pinkDesc": "Odaklanma, yaratıcılık ve dinlenme dönemlerini doğru planlamak için kanıta dayalı yöntemler."
+  },
+  "ru": {
+    "share.saveCard": "Сохранить карточку",
+    "share.saved": "Карточка сохранена (1080×1920)!",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 Копировать ссылку",
+    "share.copied": "✅ Скопировано!",
+    "curated.title": "Рекомендуемые книги по хронобиологии и ритмам",
+    "curated.disclosure": "Партнёрские ссылки",
+    "curated.subtitle": "Дополните свой график биоритмов научными книгами о сне, энергии и пиках продуктивности.",
+    "curated.cta": "Смотреть книгу ->",
+    "curated.walkerTitle": "Зачем мы спим — Мэттью Уолкер",
+    "curated.walkerDesc": "Фундаментальная наука о циркадных ритмах, восстановлении во сне и ясности ума.",
+    "curated.pinkTitle": "Тайминг (When) — Дэниел Пинк",
+    "curated.pinkDesc": "Исследования оптимального времени для глубокой работы, творчества и отдыха."
+  },
+  "hi": {
+    "share.saveCard": "स्टोरी कार्ड सहेजें",
+    "share.saved": "स्टोरी कार्ड सहेजा गया (1080×1920)!",
+    "share.twitter": "Twitter",
+    "share.copyUrl": "📋 लिंक कॉपी करें",
+    "share.copied": "✅ कॉपी हो गया!",
+    "curated.title": "अनुशंसित क्रोनोबायोलॉजी और समय-विज्ञान पुस्तकें",
+    "curated.disclosure": "एफिलिएट लिंक",
+    "curated.subtitle": "अपने दैनिक बायोरिदम चार्ट को नींद, ऊर्जा और सही समय के वैज्ञानिक मार्गदर्शन के साथ जोड़ें।",
+    "curated.cta": "पुस्तक देखें ->",
+    "curated.walkerTitle": "व्हाई वी स्लीप — मैथ्यू वॉकर",
+    "curated.walkerDesc": "सर्कैडियन रिदम, गहरी नींद और मानसिक ऊर्जा पर आधारित महत्वपूर्ण विज्ञान पुस्तक।",
+    "curated.pinkTitle": "व्हेन (When) — डैनियल एच. पिंक",
+    "curated.pinkDesc": "गहन एकाग्रता, रचनात्मकता और विश्राम के सर्वोत्तम समय को चुनने की शोध-आधारित रणनीतियाँ।"
+  }
+};
   for (const [lang, dict] of Object.entries(guideData)) {
+    if (LANG[lang]) {
+      Object.assign(LANG[lang], dict);
+    }
+  }
+  for (const [lang, dict] of Object.entries(extraData)) {
     if (LANG[lang]) {
       Object.assign(LANG[lang], dict);
     }
@@ -1178,6 +1390,11 @@ function drawGraph(progress){
 
 function animateGraph(){
   if(animFrame) cancelAnimationFrame(animFrame);
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    animProgress = 1;
+    drawGraph(1);
+    return;
+  }
   animProgress = 0;
   function step(){
     animProgress += 0.035;
@@ -1229,8 +1446,16 @@ function calculate(){
   localStorage.setItem('bio-birth', birthInput);
   if(partnerInput) localStorage.setItem('bio-partner', partnerInput);
 
+  const todayStatuses = CYCLES.map((_, ci) => getStatus(graphData.values[ci][15]));
+  const hasCriticalToday = todayStatuses.includes('critical');
+  const peakCount = todayStatuses.filter(s => s === 'high').length;
+  const resultType = hasCriticalToday ? 'critical_transition' : (peakCount >= 2 ? 'peak_sync' : 'steady_cycle');
+  graphData.resultType = resultType;
+
   if(typeof gtag==='function'){
+    gtag('event','test_start',{event_category:'biorhythm',app_name:'biorhythm'});
     gtag('event','calculate_biorhythm');
+    gtag('event','test_complete',{event_category:'biorhythm',app_name:'biorhythm',result_type:resultType});
     gtag('event','engagement',{event_category:'biorhythm',event_label:'first_interaction'});
   }
 
@@ -1239,6 +1464,7 @@ function calculate(){
   document.getElementById('criticalSection').classList.add('visible');
   document.getElementById('shareSection').classList.add('visible');
   showShareButtons();
+  renderCuratedResources();
 
   resizeCanvas();
   animateGraph();
@@ -1390,27 +1616,232 @@ function showShareButtons() {
   if (shareSection) shareSection.style.display = 'flex';
 }
 
-document.getElementById('btnShare').addEventListener('click',()=>{
-  if(!graphData) return;
-  const vals = CYCLES.map((c,i)=>t(c.name)+': '+(graphData.values[i][15]>=0?'+':'')+Math.round(graphData.values[i][15])+'%');
-  const text = `🌀 ${t('title')}\n📅 ${fmtDate(graphData.today)}\n\n${vals.join('\n')}\n\nhttps://dopabrain.com/biorhythm/`;
-  if(navigator.share) navigator.share({title:t('title'),text}).catch(()=>{});
-  else{navigator.clipboard.writeText(text).catch(()=>{});alert(window.i18n?.t('share.copied') || 'Copied!');}
+function getShareUrl() {
+  return 'https://dopabrain.com/biorhythm/?lang=' + encodeURIComponent(currentLang || 'en') + '&utm_source=share';
+}
+
+function showBioToast(msg) {
+  let toast = document.getElementById('bioToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'bioToast';
+    toast.className = 'bio-toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toast._hideTimer);
+  toast._hideTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+function getAmazonDomain(lang) {
+  const map = { ja: 'amazon.co.jp', de: 'amazon.de', fr: 'amazon.fr', es: 'amazon.es', hi: 'amazon.in' };
+  return map[lang] || 'amazon.com';
+}
+
+function renderCuratedResources() {
+  const container = document.getElementById('curated-resources-card');
+  if (!container) return;
+  if (!graphData) {
+    container.style.display = 'none';
+    return;
+  }
+  const lang = currentLang || 'en';
+  const domain = getAmazonDomain(lang);
+  const items = [
+    {
+      key: 'whyWeSleep',
+      asin: '1501144316',
+      title: t('curated.walkerTitle'),
+      desc: t('curated.walkerDesc')
+    },
+    {
+      key: 'whenTiming',
+      asin: '0735210624',
+      title: t('curated.pinkTitle'),
+      desc: t('curated.pinkDesc')
+    }
+  ];
+  container.innerHTML = `
+    <div class="curated-resources-header">
+      <h3 class="curated-resources-title">${t('curated.title')}</h3>
+      <span class="curated-disclosure">${t('curated.disclosure')}</span>
+    </div>
+    <p class="curated-resources-subtitle">${t('curated.subtitle')}</p>
+    <div class="curated-list">
+      ${items.map(item => `
+        <a class="curated-item" href="https://www.${domain}/dp/${item.asin}?tag=dopabrain-20" target="_blank" rel="noopener sponsored nofollow" data-resource-key="${item.key}">
+          <div class="curated-item-top">
+            <span class="curated-item-title">${item.title}</span>
+            <span class="curated-item-cta">${t('curated.cta')}</span>
+          </div>
+          <span class="curated-item-desc">${item.desc}</span>
+        </a>
+      `).join('')}
+    </div>`;
+  container.style.display = 'block';
+  container.querySelectorAll('.curated-item').forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'curated_resource_click', {
+          app_name: 'biorhythm',
+          resource_key: link.getAttribute('data-resource-key'),
+          result_type: graphData.resultType || 'steady_cycle',
+          content_locale: lang,
+          cta_surface: 'curated_resources'
+        });
+        gtag('event', 'content_cta_click', {
+          cta_type: 'curated_book',
+          destination: link.getAttribute('href'),
+          source: 'biorhythm'
+        });
+      }
+    });
+  });
+}
+
+function saveStoryCard() {
+  const cardCanvas = document.getElementById('shareCanvas');
+  if (!cardCanvas || !graphData) return;
+  cardCanvas.width = 1080;
+  cardCanvas.height = 1920;
+  const sctx = cardCanvas.getContext('2d');
+
+  const bgGrad = sctx.createLinearGradient(0, 0, 1080, 1920);
+  bgGrad.addColorStop(0, '#0a0a1a');
+  bgGrad.addColorStop(0.5, '#151836');
+  bgGrad.addColorStop(1, '#1d1438');
+  sctx.fillStyle = bgGrad;
+  sctx.fillRect(0, 0, 1080, 1920);
+
+  sctx.fillStyle = 'rgba(108, 92, 231, 0.22)';
+  sctx.beginPath();
+  sctx.arc(880, 260, 260, 0, Math.PI * 2);
+  sctx.fill();
+  sctx.fillStyle = 'rgba(0, 184, 217, 0.16)';
+  sctx.beginPath();
+  sctx.arc(200, 1620, 280, 0, Math.PI * 2);
+  sctx.fill();
+
+  sctx.fillStyle = 'rgba(255,255,255,0.06)';
+  sctx.strokeStyle = 'rgba(255,255,255,0.14)';
+  sctx.lineWidth = 3;
+  sctx.beginPath();
+  sctx.roundRect(72, 110, 936, 1700, 44);
+  sctx.fill();
+  sctx.stroke();
+
+  sctx.textAlign = 'center';
+  sctx.fillStyle = '#a29bfe';
+  sctx.font = '700 32px Inter, sans-serif';
+  sctx.fillText('DOPABRAIN BIORHYTHM', 540, 220);
+
+  sctx.fillStyle = '#ffffff';
+  sctx.font = '700 58px Inter, sans-serif';
+  sctx.fillText(t('title'), 540, 310);
+
+  sctx.fillStyle = '#b4b8d4';
+  sctx.font = '600 34px Inter, sans-serif';
+  sctx.fillText(fmtDate(graphData.today) + ' — ' + t('today'), 540, 385);
+
+  CYCLES.forEach((cycle, ci) => {
+    const yTop = 480 + ci * 350;
+    const val = graphData.values[ci][15];
+    const status = getStatus(val);
+    const statusKey = 'status' + status.charAt(0).toUpperCase() + status.slice(1);
+    const pct = Math.max(4, Math.min(98, (val + 100) / 2));
+
+    sctx.fillStyle = 'rgba(255,255,255,0.05)';
+    sctx.strokeStyle = 'rgba(255,255,255,0.12)';
+    sctx.lineWidth = 2;
+    sctx.beginPath();
+    sctx.roundRect(126, yTop, 828, 290, 28);
+    sctx.fill();
+    sctx.stroke();
+
+    sctx.textAlign = 'left';
+    sctx.fillStyle = '#ffffff';
+    sctx.font = '700 40px Inter, sans-serif';
+    sctx.fillText(cycle.icon + '  ' + t(cycle.name) + ' (' + cycle.length + 'd)', 170, yTop + 82);
+
+    sctx.textAlign = 'right';
+    sctx.fillStyle = cycle.color;
+    sctx.font = '800 52px Inter, sans-serif';
+    sctx.fillText((val >= 0 ? '+' : '') + Math.round(val) + '%', 910, yTop + 86);
+
+    sctx.fillStyle = 'rgba(255,255,255,0.1)';
+    sctx.beginPath();
+    sctx.roundRect(170, yTop + 128, 740, 26, 13);
+    sctx.fill();
+
+    sctx.fillStyle = cycle.color;
+    sctx.beginPath();
+    sctx.roundRect(170, yTop + 128, Math.round(740 * pct / 100), 26, 13);
+    sctx.fill();
+
+    sctx.textAlign = 'left';
+    sctx.fillStyle = '#d3d7ec';
+    sctx.font = '600 30px Inter, sans-serif';
+    sctx.fillText(t(statusKey), 170, yTop + 225);
+  });
+
+  sctx.textAlign = 'center';
+  sctx.fillStyle = '#8b92b8';
+  sctx.font = '600 30px Inter, sans-serif';
+  sctx.fillText('dopabrain.com/biorhythm/', 540, 1720);
+
+  try {
+    const link = document.createElement('a');
+    link.download = 'biorhythm-card-' + (currentLang || 'en') + '.png';
+    link.href = cardCanvas.toDataURL('image/png');
+    link.click();
+  } catch (e) {}
+
+  showBioToast(t('share.saved'));
+  if (typeof gtag === 'function') {
+    gtag('event', 'save_image', {
+      event_category: 'biorhythm',
+      app_name: 'biorhythm',
+      result_type: graphData.resultType || 'steady_cycle',
+      save_surface: 'result_story_1080x1920'
+    });
+  }
+}
+
+document.getElementById('btnShare').addEventListener('click', () => {
+  if (!graphData) return;
+  const shareUrl = getShareUrl();
+  const vals = CYCLES.map((c, i) => t(c.name) + ': ' + (graphData.values[i][15] >= 0 ? '+' : '') + Math.round(graphData.values[i][15]) + '%');
+  const text = `🌀 ${t('title')}\n📅 ${fmtDate(graphData.today)}\n\n${vals.join('\n')}\n\n${shareUrl}`;
+  if (navigator.share) {
+    navigator.share({ title: t('title'), text, url: shareUrl }).catch(() => {});
+    if (typeof gtag === 'function') gtag('event', 'share', { method: 'native', content_type: 'biorhythm_card' });
+  } else {
+    navigator.clipboard.writeText(text).catch(() => {});
+    showBioToast(t('share.copied'));
+    if (typeof gtag === 'function') gtag('event', 'share', { method: 'copy', content_type: 'biorhythm_card' });
+  }
 });
 
+document.getElementById('saveCardBtn')?.addEventListener('click', saveStoryCard);
+
 document.getElementById('shareTwitterBtn')?.addEventListener('click', () => {
-  const text = document.title + ' - ' + window.location.href;
-  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
-  if (typeof gtag !== 'undefined') gtag('event', 'share', { method: 'twitter' });
+  const shareUrl = getShareUrl();
+  const text = t('title') + ' - ' + shareUrl;
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  if (typeof gtag === 'function') gtag('event', 'share', { method: 'twitter', content_type: 'biorhythm_card' });
 });
 
 document.getElementById('shareUrlBtn')?.addEventListener('click', () => {
-  navigator.clipboard.writeText(window.location.href).then(() => {
-    const btn = document.getElementById('shareUrlBtn');
-    btn.textContent = (window.i18n?.t('share.copied') || '✅ Copied!');
-    setTimeout(() => { btn.innerHTML = (window.i18n?.t('share.copyUrl') || '📋 Copy URL'); }, 2000);
+  const shareUrl = getShareUrl();
+  navigator.clipboard.writeText(shareUrl).then(() => {
+    showBioToast(t('share.copied'));
+  }).catch(() => {
+    showBioToast(t('share.copied'));
   });
-  if (typeof gtag !== 'undefined') gtag('event', 'share', { method: 'url_copy' });
+  if (typeof gtag === 'function') gtag('event', 'share', { method: 'url_copy', content_type: 'biorhythm_card' });
 });
 
 /* ─── Events ─── */
@@ -1439,14 +1870,14 @@ document.querySelectorAll('.lang-option').forEach(btn=>{
   btn.addEventListener('click',()=>{
     currentLang = btn.dataset.lang;
     localStorage.setItem('bio-lang', currentLang);
-    initRelatedFunnels();
     updateUI();
-  initRelatedFunnels();
+    initRelatedFunnels();
     document.getElementById('langMenu').classList.remove('open');
     if(graphData){
       drawGraph(1);
       renderReading(selectedDay);
       renderCritical();
+      renderCuratedResources();
     }
   });
 });
@@ -1480,7 +1911,7 @@ if(themeToggle){
 // Funnel bridge & language preservation
 function initRelatedFunnels() {
   const urlParams = new URLSearchParams(window.location.search);
-  const lang = urlParams.get('lang') || currentLang || 'ko';
+  const lang = currentLang || urlParams.get('lang') || 'ko';
   const base = (window.location.origin && window.location.origin !== 'null') ? window.location.origin : 'https://dopabrain.com';
   document.querySelectorAll('.related-grid a').forEach(link => {
     const baseHref = link.getAttribute('data-base-href') || link.getAttribute('href');

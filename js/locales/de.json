@@ -39,7 +39,7 @@
   "compatScore": "Punktzahl",
   "accessibility.skipToMain": "Zum Hauptinhalt springen",
   "share.twitter": "Twitter",
-  "share.copyUrl": "📋 URL kopieren",
+  "share.copyUrl": "📋 Link kopieren",
   "share.copied": "✅ Kopiert!",
   "biorhythm.noCriticalDays": "✨ Keine kritischen Übergänge in diesem Zeitraum.",
   "biorhythm": {
@@ -52,5 +52,15 @@
     "stressCheck": "Stresstest",
     "luckMeter": "Glücksmesser",
     "dreamFortune": "Traumdeutung"
-  }
+  },
+  "share.saveCard": "Story-Karte speichern",
+  "share.saved": "Story-Karte gespeichert (1080×1920)!",
+  "curated.title": "Empfohlene Bücher zu Chronobiologie & Timing",
+  "curated.disclosure": "Affiliate-Links",
+  "curated.subtitle": "Kombiniere deine Tageskurve mit fundierten Leitfäden zu Schlaf, Energie und Leistungsspitzen.",
+  "curated.cta": "Buch ansehen ->",
+  "curated.walkerTitle": "Das große Buch vom Schlaf — Matthew Walker",
+  "curated.walkerDesc": "Führende Forschung zu zirkadianen Rhythmen, Erholung und geistiger Leistungsfähigkeit.",
+  "curated.pinkTitle": "When: Die Wissenschaft des perfekten Timings — Daniel H. Pink",
+  "curated.pinkDesc": "Praxisnahe Erkenntnisse für Fokusphasen, kreative Hochs und bewusste Pausen."
 }

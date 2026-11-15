@@ -38,9 +38,9 @@
   "compatTitle": "궁합 결과",
   "compatScore": "궁합 점수",
   "accessibility.skipToMain": "본문으로 건너뛰기",
-  "share.twitter": "트위터",
+  "share.twitter": "Twitter",
   "share.copyUrl": "📋 URL 복사",
-  "share.copied": "✅ 복사됨!",
+  "share.copied": "✅ 복사 완료!",
   "biorhythm.noCriticalDays": "✨ 이 기간에는 전환기가 없습니다.",
   "biorhythm": {
     "noCriticalDays": "✨ 이 기간에는 전환기가 없습니다."
@@ -52,5 +52,15 @@
     "stressCheck": "스트레스 체크",
     "luckMeter": "행운 측정기",
     "dreamFortune": "꿈해몽 & 운세"
-  }
+  },
+  "share.saveCard": "스토리 카드 저장",
+  "share.saved": "스토리 카드가 저장되었습니다 (1080×1920)!",
+  "curated.title": "크로노바이올로지 & 생체리듬 추천 도서",
+  "curated.disclosure": "제휴 링크",
+  "curated.subtitle": "오늘의 신체·감성·지성 주기 그래프와 함께 수면 및 시간 관리 과학 가이드를 확인하세요.",
+  "curated.cta": "책 보기 ->",
+  "curated.walkerTitle": "우리는 왜 잠을 자야 할까 — 매튜 워커",
+  "curated.walkerDesc": "일주기 리듬, 깊은 수면 회복, 두뇌 컨디션의 뇌과학적 원리를 다룬 필독서.",
+  "curated.pinkTitle": "언제 할 것인가 (When) — 다니엘 핑크",
+  "curated.pinkDesc": "집중력·창의력·회복이 최고조에 달하는 최적의 타이밍을 과학적으로 설계하는 전략서."
 }

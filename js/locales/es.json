@@ -39,7 +39,7 @@
   "compatScore": "Puntuación",
   "accessibility.skipToMain": "Saltar al contenido principal",
   "share.twitter": "Twitter",
-  "share.copyUrl": "📋 Copiar URL",
+  "share.copyUrl": "📋 Copiar enlace",
   "share.copied": "✅ ¡Copiado!",
   "biorhythm.noCriticalDays": "✨ Sin transiciones críticas en este período.",
   "biorhythm": {
@@ -52,5 +52,15 @@
     "stressCheck": "Test de estrés",
     "luckMeter": "Medidor de suerte",
     "dreamFortune": "Sueños y Fortuna"
-  }
+  },
+  "share.saveCard": "Guardar tarjeta",
+  "share.saved": "¡Tarjeta guardada (1080×1920)!",
+  "curated.title": "Libros recomendados de cronobiología y ritmo",
+  "curated.disclosure": "Enlaces de afiliado",
+  "curated.subtitle": "Combina tu gráfico diario con guías científicas sobre sueño, energía y momentos óptimos.",
+  "curated.cta": "Ver libro ->",
+  "curated.walkerTitle": "Por qué dormimos — Matthew Walker",
+  "curated.walkerDesc": "Ciencia esencial sobre los ritmos circadianos, el sueño reparador y la claridad mental.",
+  "curated.pinkTitle": "Cuándo (When) — Daniel H. Pink",
+  "curated.pinkDesc": "Estrategias basadas en datos para alinear enfoque, creatividad y pausas con tu energía."
 }
