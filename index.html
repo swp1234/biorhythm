@@ -1139,6 +1139,14 @@ const LANG = {
       Object.assign(LANG[lang], dict);
     }
   }
+  const skipToMainData = {
+    ko: '본문으로 건너뛰기', en: 'Skip to main content', zh: '跳至正文', hi: 'मुख्य सामग्री पर जाएं',
+    ru: 'Перейти к содержимому', ja: 'メインコンテンツへ移動', es: 'Ir al contenido principal', pt: 'Ir para o conteúdo principal',
+    id: 'Lewati ke konten utama', tr: 'Ana içeriğe geç', de: 'Zum Hauptinhalt springen', fr: 'Aller au contenu principal'
+  };
+  for (const [lang, label] of Object.entries(skipToMainData)) {
+    if (LANG[lang]) LANG[lang]['accessibility.skipToMain'] = label;
+  }
   for (const [lang, dict] of Object.entries(extraData)) {
     if (LANG[lang]) {
       Object.assign(LANG[lang], dict);
@@ -1156,14 +1164,38 @@ function t(key){ return (LANG[currentLang]||LANG.en)[key] || (LANG.en)[key] || k
 function updateUI(){
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const k = el.getAttribute('data-i18n');
-    if(k) el.textContent = t(k);
+    const val = k ? t(k) : '';
+    if(val && val !== k && !el.querySelector('svg')) el.textContent = val;
   });
   document.querySelectorAll('.lang-option').forEach(btn=>{
     btn.classList.toggle('active', btn.dataset.lang===currentLang);
   });
   document.documentElement.lang = currentLang;
+  if (window.i18n) window.i18n.currentLang = currentLang;
   preserveLanguageLinks();
 }
+
+window.i18n = {
+  currentLang: currentLang,
+  supportedLanguages: Object.keys(LANG),
+  t: t,
+  updateUI: updateUI,
+  getCurrentLanguage: () => currentLang,
+  setLanguage: async (lang) => {
+    if (!LANG[lang]) return false;
+    currentLang = lang;
+    localStorage.setItem('bio-lang', currentLang);
+    updateUI();
+    initRelatedFunnels();
+    if (typeof graphData !== 'undefined' && graphData) {
+      drawGraph(1);
+      renderReading(selectedDay);
+      renderCritical();
+      if (typeof renderCuratedResources === 'function') renderCuratedResources();
+    }
+    return true;
+  }
+};
 
 function preserveLanguageLinks(){
   var lang = currentLang;
