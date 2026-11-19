@@ -85,5 +85,11 @@
     "faq4A": "A: No. All calculations happen entirely in your local browser sandbox. No personal dates are stored or sent to remote servers.",
     "reviewDate": "Editorial Review: November 2026",
     "reviewTeam": "DopaBrain Chronobiology Team"
+  },
+  "nextStep": {
+    "label": "Recommended Next Step",
+    "title": "Stress Level Check & 7-Day Plan",
+    "desc": "Check your current stress balance across 5 areas and build a private 7-day reset plan.",
+    "cta": "Take Stress Check →"
   }
 }

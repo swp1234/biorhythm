@@ -85,5 +85,11 @@
     "faq4A": "A: No. All calculations happen entirely in your local browser sandbox. No personal dates are stored or sent to remote servers.",
     "reviewDate": "संपादकीय समीक्षा: नवंबर 2026",
     "reviewTeam": "DopaBrain Chronobiology Team"
+  },
+  "nextStep": {
+    "label": "अनुशंसित अगला कदम",
+    "title": "तनाव परीक्षण और 7-दिन की योजना",
+    "desc": "5 क्षेत्रों में अपना तनाव संतुलन जाँचें और मुफ़्त 7-दिन की रीसेट योजना बनाएँ।",
+    "cta": "तनाव टेस्ट शुरू करें →"
   }
 }

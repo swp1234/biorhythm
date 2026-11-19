@@ -85,5 +85,11 @@
     "faq4A": "A: No. All calculations happen entirely in your local browser sandbox. No personal dates are stored or sent to remote servers.",
     "reviewDate": "Redaktionelle Prüfung: November 2026",
     "reviewTeam": "DopaBrain Chronobiology Team"
+  },
+  "nextStep": {
+    "label": "Empfohlener nächster Schritt",
+    "title": "Stresslevel-Check & 7-Tage-Plan",
+    "desc": "Prüfe deine Stressbalance in 5 Bereichen und erstelle deinen privaten 7-Tage-Plan.",
+    "cta": "Stresstest starten →"
   }
 }

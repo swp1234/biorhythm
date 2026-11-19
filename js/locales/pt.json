@@ -85,5 +85,11 @@
     "faq4A": "A: No. All calculations happen entirely in your local browser sandbox. No personal dates are stored or sent to remote servers.",
     "reviewDate": "Revisão editorial: novembro de 2026",
     "reviewTeam": "DopaBrain Chronobiology Team"
+  },
+  "nextStep": {
+    "label": "Próximo passo recomendado",
+    "title": "Teste de Estresse e Plano 7 Dias",
+    "desc": "Avalie seu equilíbrio de estresse em 5 áreas e monte um plano gratuito de 7 dias.",
+    "cta": "Fazer Teste de Estresse →"
   }
 }
